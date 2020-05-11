@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 body {
-    background:rgb(107,187,241);
+    background:rgb(50, 104, 139);
     font: normal 15pt Arial;
 }
 header {
@@ -20,7 +20,7 @@ footer {
     color: white;
 }
 
-p#cop{
+p.cop{
     
     text-align: center;
     font-style: italic;
