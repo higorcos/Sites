@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+
+body {
+    background:rgb(50, 104, 139);
+    font: normal 15pt Arial;
+}
+header {
+        color: white;
+        text-align: center;
+}
+section {
+        background: white;
+        border-radius: 10px;
+        padding: 15px ;
+        width: 500px;
+        margin: auto;
+        box-shadow: 3px 3px 10px rgb(53, 50, 50);
+}
+footer {
+    color: white;
+}
+
+p.cop{
+    
+    text-align: center;
+    font-style: italic;
+
+}
