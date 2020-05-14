@@ -1,0 +1,31 @@
+@charset 'UTF-8';
+
+body {
+    background:rgb(53, 85, 95);
+    font: normal 15pt Arial;
+}
+header {
+        color: white;
+        text-align: center;
+}
+section {
+        background: rgb(107,187,241);
+        border-radius: 10px;
+        padding: 15px ;
+        width: 500px;
+        margin: auto;
+        box-shadow: 3px 3px 10px rgb(53, 50, 50);
+}
+footer {
+    color: white;
+}
+div#iRe {
+    color: black;
+}
+
+p#cop{
+    
+    text-align: right;
+    font-style: italic;
+
+}
