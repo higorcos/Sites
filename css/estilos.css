@@ -118,30 +118,30 @@ a:hover {
 .sobre p {
   font-family: 'Press Start 2P', cursive;
   color: whitesmoke;
-  
   font-size: 1em;
-  text-align: center;
-}  
-.sobre figcaption{
-   
-   margin-top: -60px;
-   margin-bottom: 10px;
+  margin-top: 4em;
+  
 
-}
+}  
+
 .sobre figure {
   font-size: 1.6em;
   text-align: center;
   text-justify: auto;
+  
 }
-/*
+  /*essa seção é a do sobre*/
 
-.sobre figure {
-  text-align: center;
-}
-.sobre figcaption{
+  .sobre2 {
+   display: grid;
+    gap: 2em;
+    grid-template-columns: 180px auto;
+    align-content: center;
+  
+    
+  }
+ 
 
-}
-*/
 
 .portfolio .grid {
   display: grid;
