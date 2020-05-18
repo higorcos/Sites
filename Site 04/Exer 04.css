@@ -31,11 +31,14 @@ div#iRe {
     color: black;
 }
 
-p#cop{
+p.cop{
     
-    text-align: right;
+    text-align: center;
     font-style: italic;
 
+}
+select {
+    width: 300px;
 }
 
 

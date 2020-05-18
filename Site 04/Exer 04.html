@@ -13,35 +13,21 @@
         <h1>Faça a sua operação</h1>
     </header>
     <section>
-        <div id="dados">
+        <div>
             <p>
-                <label for="iNumero">Número: </label><input type="number" name="nNumero" id="iNumero" />
-            </p>
-            <p>Operação</p>
-            <p> <input type="radio" name="nOpe" id="iMultiplicar" onclick="Multiplicar()" /> <label
-                    for="iMultiplicar">Multiplicar</label>
-                <input type="radio" name="nOpe" id="iDividir" onclick="Dividir()" /> <label
-                    for="iDividir">Dividir</label>
-                <input type="radio" name="nOpe" id="iSomar" onclick="Somar()" /><label for="iSomar">Somar</label>
-                <input type="radio" name="nOpe" id="iSubtrair" onclick="Subtrair()" /> <label
-                    for="iSubtrair">Subtrair</label>
-                <!--<input type="radio" name="nOpe" id="iMedia" onclick="Media()"/> <label for="iMedia">Media</label>-->
-            </p>
-            <p>
-                <input type="button" value="Calcular" onclick="cal()" class="botao" />
-                <input type="button" value="Media" onclick="Media()" class="botao" />
-            <p id="entrada"></p>
+                <input type="button" value="Calculadora" onclick="calculadoraNormal()" class="botao" />
+                <input type="button" value="Tirar Média" onclick="Media()" class="botao" />
             </p>
         </div>
         <div>
-            <select name="nMensagem" id="iRe" size="10">
-                <option>Digite um número acima</option>
-            </select>
-
+            <p id="iInterfaceSite"></p>
+        </div>
+        <div>
+            <p id=iBox></p>
         </div>
     </section>
     <footer>
-        <p id="cop">&copy; higor</p>
+        <p class="cop">&copy; hígor</br> Beta: 0.87</p>
     </footer>
 </body>
 

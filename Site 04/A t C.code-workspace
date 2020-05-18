@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\.."
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"workbench.editor.limit.value": 2,
+		"workbench.colorTheme": "Monokai Dimmed",
+		"workbench.preferredHighContrastColorTheme": "Dracula Soft",
+		"workbench.preferredLightColorTheme": "Dracula Soft"
+	}
+}
