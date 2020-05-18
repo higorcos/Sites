@@ -1,7 +1,20 @@
-    var saidaDeMensagem = ""
-    var interfaceSite = ""
-    var box = ""
-function calculadoraNormal(){
+var saidaDeMensagem = ""
+var interfaceSite = ""
+var box = ""
+function calculadoraNormal() {
+    console.log('Botão calculadora pressionado');
+    interfaceSite = document.getElementById('iInterfaceSite');
+    interfaceSite.innerHTML = `
+        <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero" /></p>
+        <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2" /></p>
+        <p>Operação</p>
+        <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+        <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
+        <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+        <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+        <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+}
+function calculadoraNormal1a10() {
     console.log('Botão calculadora pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `<p><label for="iNumero">Número: </label><input type="number" name="nNumero" id="iNumero" /></p>
@@ -12,6 +25,58 @@ function calculadoraNormal(){
     <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
     <input type="button" value="Calcular" onclick="cal()" class="botao" />`
 }
+function calcudoraDoisNumeros() {
+    let numeroL = document.getElementById('iNumero');
+    let numerol2 = document.getElementById('iNumero2');
+    let numero = Number(document.getElementById('iNumero').value);
+    let numero2 = Number(document.getElementById('iNumero2').value);
+    let nOpe = document.getElementsByName('nOpe')
+
+    box = document.getElementById('iBox');
+    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
+    <option>Digite um número acima</option>
+    </select>`
+    saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
+
+    if (numeroL.value.length == 0) {
+        window.alert('Digite um número 1');
+    } else if (numerol2.value.length == 0) {
+        window.alert('Digite um número 2');
+    } else if (nOpe[0].checked) {
+        console.log(numero);
+        console.log(numero2);
+        saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
+        item.value = `valor_${numero * numero2}`
+        saidaDeMensagem.appendChild(item)
+    } else if (nOpe[1].checked) {
+        console.log(numero);
+        console.log(numero2);
+        saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
+        item.value = `valor_${numero / numero2}`
+        saidaDeMensagem.appendChild(item)
+} else if (nOpe[2].checked) {
+    console.log(numero);
+    console.log(numero2);
+    saidaDeMensagem.innerHTML = ``
+    let item = document.createElement('option');
+    item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
+    item.value = `valor_${numero + numero2}`
+    saidaDeMensagem.appendChild(item)
+} else if (nOpe[3].checked) {
+    console.log(numero);
+    console.log(numero2);
+    saidaDeMensagem.innerHTML = ``
+    let item = document.createElement('option');
+    item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
+    item.value = `valor_${numero - numero2}`
+    saidaDeMensagem.appendChild(item)
+
+    }
+}
 
 function cal() {
     let numeroL = document.getElementById('iNumero');
@@ -19,13 +84,13 @@ function cal() {
     let nOpe = document.getElementsByName('nOpe')
 
     box = document.getElementById('iBox');
-    box.innerHTML =`<select name="nMensagem" id="iSaidaDeMensagem" size="10">
+    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
     <option>Digite um número acima</option>
     </select>`
     saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
 
     if (numeroL.value.length == 0) {
-        window.alert("digite um numero ")
+        window.alert("Digite um número")
     } else if (nOpe[0].checked) {
         console.log(numero);
         saidaDeMensagem.innerHTML = ``
@@ -146,7 +211,7 @@ function ari5() {
 function TirandoMedia() {
     //console.log("TirandoMedia pressionado ");
     box = document.getElementById('iBox')
-    box.innerHTML =`<select name="nMensagem" id="iSaidaDeMensagem" size="10">
+    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
     <option>Digite um número acima</option>
     </select>`
     saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
