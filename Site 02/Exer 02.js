@@ -20,7 +20,8 @@ const verificar = () => {
 
             if(ano == fAno.value){
                 genero = 'Bebê'
-
+                //bebê
+                img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
             }else if (idade > 0 && idade < 11) {
                 genero = 'Criança'
                 //criança
@@ -39,7 +40,11 @@ const verificar = () => {
 
         } else if (sexo[1].checked) {
             genero = 'Mulher';
-            if (idade > 0 && idade < 11) {
+            if(ano == fAno.value){
+                genero = 'Bebê'
+                //bebê
+                img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
+            }else if (idade > 0 && idade < 11) {
                 genero = 'Criança'
                 //criança
                 img.setAttribute('src','https://i.ibb.co/0XpK2VT/Crian-a-m.png');
