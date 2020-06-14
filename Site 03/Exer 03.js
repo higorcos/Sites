@@ -1,5 +1,4 @@
-
-function contar() {
+const contar = () => {
     let numeroI = Number(document.getElementById('iInicial').value);
     let numeroF = Number(document.getElementById('iFinal').value);
     let pulo = Number(document.getElementById('iPulo').value);
