@@ -1,6 +1,6 @@
 
 
-function carregar() {
+const carregar = () => {
     var msg = window.document.getElementById('msg');
     var imagem = window.document.getElementById('img');
     var data = new Date();   //data
