@@ -1,4 +1,4 @@
-function verificar() {
+const verificar = () => {
     var data = new Date();
     var ano = data.getFullYear();
 
@@ -12,15 +12,21 @@ function verificar() {
         var sexo = window.document.getElementsByName('nSexo');
         var idade = ano - Number(fAno.value);
         var genero = '';
-        var img = document.createElement('img'); ///criando html no java script
+        var img = document.createElement('img'); ///criando html pelo javascript
         img.setAttribute('id', 'img01'); //criamos um id para a fotochamada img1
 
         if (sexo[0].checked) {
             genero = 'Homem';
-            if (idade > 0 && idade < 11) {
+
+            if(ano == fAno.value){
+                genero = 'Bebê'
+
+            }else if (idade > 0 && idade < 11) {
+                genero = 'Criança'
                 //criança
                 img.setAttribute('src','https://i.ibb.co/7XPYYzf/Crian-a-h.png');
             } else if (idade < 22) {
+                genero = 'Jovem'
                 //jovem
                 img.setAttribute('src','https://i.ibb.co/31CFBDc/Jovens-h.png');
             } else if (idade < 60) {
@@ -34,9 +40,11 @@ function verificar() {
         } else if (sexo[1].checked) {
             genero = 'Mulher';
             if (idade > 0 && idade < 11) {
+                genero = 'Criança'
                 //criança
                 img.setAttribute('src','https://i.ibb.co/0XpK2VT/Crian-a-m.png');
             } else if (idade < 22) {
+                genero = 'Jovem'
                 //jovem
                 img.setAttribute('src','https://i.ibb.co/z2wPj2R/Jovens-m.png');
             } else if (idade < 60) {
