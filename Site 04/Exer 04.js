@@ -1,8 +1,8 @@
 var saidaDeMensagem = ""
 var interfaceSite = ""
 var box = ""
-function calculadoraNormal() {
-    console.log('Botão calculadora pressionado');
+const calculadoraNormal = () => {
+    console.log('Botão tabuada pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `
         <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero" /></p>
@@ -14,7 +14,7 @@ function calculadoraNormal() {
         <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
         <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
 }
-function calculadoraNormal1a10() {
+const calculadoraNormal1a10 = () => {
     console.log('Botão calculadora pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `<p><label for="iNumero">Número: </label><input type="number" name="nNumero" id="iNumero" /></p>
@@ -25,18 +25,15 @@ function calculadoraNormal1a10() {
     <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
     <input type="button" value="Calcular" onclick="cal()" class="botao" />`
 }
-function calcudoraDoisNumeros() {
+const calcudoraDoisNumeros = () => {
     let numeroL = document.getElementById('iNumero');
     let numerol2 = document.getElementById('iNumero2');
     let numero = Number(document.getElementById('iNumero').value);
     let numero2 = Number(document.getElementById('iNumero2').value);
     let nOpe = document.getElementsByName('nOpe')
 
-    box = document.getElementById('iBox');
-    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
-    <option>Digite um número acima</option>
-    </select>`
-    saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
+    boxF();
+    
 
     if (numeroL.value.length == 0) {
         window.alert('Digite um número 1');
@@ -78,16 +75,12 @@ function calcudoraDoisNumeros() {
     }
 }
 
-function cal() {
+const cal = () => {
     let numeroL = document.getElementById('iNumero');
     let numero = Number(document.getElementById('iNumero').value);
     let nOpe = document.getElementsByName('nOpe')
 
-    box = document.getElementById('iBox');
-    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
-    <option>Digite um número acima</option>
-    </select>`
-    saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
+    boxF();
 
     if (numeroL.value.length == 0) {
         window.alert("Digite um número")
@@ -141,7 +134,7 @@ var numero4 = ""
 var numero5 = ""
 
 
-function Media() {
+const Media = () => {
     console.log('Botão Média pressionado  ');
     //var interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite = document.getElementById('iInterfaceSite');
@@ -154,7 +147,7 @@ function Media() {
 
 
 }
-function ari2() {
+const ari2 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
     console.log('Média com 2 números');
     interfaceSite.innerHTML =
@@ -168,7 +161,7 @@ function ari2() {
 
 }
 
-function ari3() {
+const ari3 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
     console.log('Média com 3 números ');
     interfaceSite.innerHTML =
@@ -181,7 +174,7 @@ function ari3() {
      `
     numeroDeElementos = 3;
 }
-function ari4() {
+const ari4 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
     console.log('Média com 4 números ');
     interfaceSite.innerHTML =
@@ -194,7 +187,7 @@ function ari4() {
     `
     numeroDeElementos = 4;
 }
-function ari5() {
+const ari5 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
     console.log('Média com 5 números');
     interfaceSite.innerHTML =
@@ -208,13 +201,9 @@ function ari5() {
      `
     numeroDeElementos = 5;
 }
-function TirandoMedia() {
+const TirandoMedia = () => {
     //console.log("TirandoMedia pressionado ");
-    box = document.getElementById('iBox')
-    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
-    <option>Digite um número acima</option>
-    </select>`
-    saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
+    boxF();
 
     switch (numeroDeElementos) {
         case 2:
@@ -272,7 +261,13 @@ function TirandoMedia() {
             break;
     }
 }
-
+const boxF = () =>{
+    box = document.getElementById('iBox');
+    box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
+    <option>Digite um número acima</option>
+    </select>`
+    saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
+}
 
 
 /*
