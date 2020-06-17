@@ -5,7 +5,7 @@ var tamanhoArray = ""
 var fases = 0
 
 
-function Adicionar() {
+const Adicionar = () => {
 
     Selecao = Number(document.getElementById('iSelecaoN').value);
     tamanhoArray = SelecaoArray.length
@@ -25,7 +25,7 @@ function Adicionar() {
         let SelectM = document.getElementById('iSelect')
         SelectM.innerHTML += ``
         let gerando_Opcao = document.createElement('option')
-        gerando_Opcao.text = `Número ${Selecao} adicionado`
+        gerando_Opcao.text = `Número ${Selecao} adicionado` 
         gerando_Opcao.value = `v_ ${Selecao}`
         SelectM.appendChild(gerando_Opcao)
         FinalMensagem = document.getElementById('iFinalMensagem')
@@ -46,7 +46,7 @@ function Adicionar() {
     Selecao.focus()
     
 }
-function Fish(){
+const Fish = () => {
     SelecaoArray.sort()
     let valor_Maior = SelecaoArray[0]
     let soma = 0
