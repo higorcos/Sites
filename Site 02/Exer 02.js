@@ -2,6 +2,10 @@ const verificar = () => {
     var data = new Date();
     var ano = data.getFullYear();
 
+    var month_date = new Date();
+    var month_date = month_date.getMonth(); //recebe o mes indicado de 0 a 11
+    console.log(month_date); 
+    
     var fAno = window.document.getElementById("iAno");
 
     var resuldado = window.document.querySelector("div#iResultado")
