@@ -1,14 +1,15 @@
+
+var month_date = new Date(); //pega o mês do cliente 
+var month = month_date.getMonth(); //recebe o mes indicado de 0 a 11
+
 const verificar = () => {
     var data = new Date();
     var ano = data.getFullYear();
 
-    var month_date = new Date();
-    var month = month_date.getMonth(); //recebe o mes indicado de 0 a 11
-    console.log(month); 
-    
-    teste();
+    monthF();
 
     var fAno = window.document.getElementById("iAno");
+    console.log(fAno.value)
 
     var resuldado = window.document.querySelector("div#iResultado")
 
@@ -73,7 +74,7 @@ const verificar = () => {
         resuldado.appendChild(img);
     }
 }
-const teste = () => {
+const monthF = () => {
     switch (month) {
         case 0: 
             console.log("Janeiro");
@@ -113,7 +114,7 @@ const teste = () => {
             break;
         default:
             console.log("Erro 404");
-            break;
+            
     }
 }
 
