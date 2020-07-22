@@ -1,22 +1,21 @@
-var data = new Date();  
-var ano = data.getFullYear(); //pega o ano do cliente 
-
-var month_date = new Date(); 
-var month = month_date.getMonth(); //pega o mês do cliente, recebe o mes indicado de 0 a 11
+var date = new Date();  // puxa a data
+var year = date.getFullYear(); //pega o ano do cliente 
+var month = date.getMonth(); //pega o mês do cliente, recebe o mes indicado de 0 a 11
 
 const verificar = () => {
     monthF();
+    console.log(date);
 
-    var fAno = window.document.getElementById("iAno");
-    console.log(fAno.value)
+    var AnoDoNascimento = window.document.getElementById("iAno");
+    console.log(AnoDoNascimento.value)
 
     var resuldado = window.document.querySelector("div#iResultado")  
 
-    if (fAno.value.length == 0 || fAno.value > ano || fAno.value == 0) {
+    if (AnoDoNascimento.value.length == 0 || AnoDoNascimento.value > year || AnoDoNascimento.value == 0) {
         window.alert("Verifique os dados e tente novamente! ");
     } else {
         var sexo = window.document.getElementsByName('nSexo');
-        var idade = ano - Number(fAno.value);
+        var idade = year - Number(AnoDoNascimento.value);
         var genero = '';
         var img = document.createElement('img'); ///criando html pelo javascript
         img.setAttribute('id', 'img01'); //criamos um id para a foto chamada img1
@@ -24,7 +23,7 @@ const verificar = () => {
         if (sexo[0].checked) {
             genero = 'Homem';
 
-            if(ano == fAno.value){
+            if(year == AnoDoNascimento.value){
                 genero = 'Bebê'
                 //bebê
                 img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
@@ -46,7 +45,7 @@ const verificar = () => {
 
         } else if (sexo[1].checked) {
             genero = 'Mulher';
-            if(ano == fAno.value){
+            if(year == AnoDoNascimento.value){
                 genero = 'Bebê'
                 //bebê
                 img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
