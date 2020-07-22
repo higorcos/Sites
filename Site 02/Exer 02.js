@@ -1,17 +1,16 @@
+var data = new Date();  
+var ano = data.getFullYear(); //pega o ano do cliente 
 
-var month_date = new Date(); //pega o mês do cliente 
-var month = month_date.getMonth(); //recebe o mes indicado de 0 a 11
+var month_date = new Date(); 
+var month = month_date.getMonth(); //pega o mês do cliente, recebe o mes indicado de 0 a 11
 
 const verificar = () => {
-    var data = new Date();
-    var ano = data.getFullYear();
-
     monthF();
 
     var fAno = window.document.getElementById("iAno");
     console.log(fAno.value)
 
-    var resuldado = window.document.querySelector("div#iResultado")
+    var resuldado = window.document.querySelector("div#iResultado")  
 
     if (fAno.value.length == 0 || fAno.value > ano || fAno.value == 0) {
         window.alert("Verifique os dados e tente novamente! ");
@@ -20,7 +19,7 @@ const verificar = () => {
         var idade = ano - Number(fAno.value);
         var genero = '';
         var img = document.createElement('img'); ///criando html pelo javascript
-        img.setAttribute('id', 'img01'); //criamos um id para a fotochamada img1
+        img.setAttribute('id', 'img01'); //criamos um id para a foto chamada img1
 
         if (sexo[0].checked) {
             genero = 'Homem';
@@ -71,7 +70,7 @@ const verificar = () => {
         resuldado.innerHTML = ` ${genero} de ${idade} anos`
         resuldado.innerHTML += `</br>`
 
-        resuldado.appendChild(img);
+        resuldado.appendChild(img);    //atribui de fato a imagem 
     }
 }
 const monthF = () => {
