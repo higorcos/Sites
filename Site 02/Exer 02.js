@@ -14,17 +14,17 @@ const verificar = () => {
     
     const day = AnoDoNascimento.split('-')[2]; // dia
     const month = AnoDoNascimento.split('-')[1]; //  nesse caso não precisamos fazer nenhum filtro diante do valor do mês
-    const year = AnoDoNascimento.split('-')[0]; // ano
-    console.log(day+ "/" + month + "/" + year) 
+    const yearNas = AnoDoNascimento.split('-')[0]; // ano
+    console.log(day+ "/" + month + "/" + yearNas) 
     
-/*
+
     var resuldado = window.document.querySelector("div#iResultado")  
 
-    if (AnoDoNascimento.length == 0 || AnoDoNascimento > yearNow || AnoDoNascimento == 0) {
+    if (yearNas.length == 0 || yearNas > yearNow || yearNas == 0) {
         window.alert("Verifique os dados e tente novamente! ");
     } else {
         var sexo = window.document.getElementsByName('nSexo');
-        var idade = yearNow - Number(AnoDoNascimento);
+        var idade = yearNow - yearNas;
         var genero = '';
         var img = document.createElement('img'); //criando html pelo javascript
         img.setAttribute('id', 'img01'); //criamos um id para a foto chamada img1
@@ -32,7 +32,7 @@ const verificar = () => {
         if (sexo[0].checked) {
             genero = 'Homem';
 
-            if(yearNow == AnoDoNascimento){
+            if(yearNow == yearNas){
                 genero = 'Bebê'
                 //bebê
                 img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
@@ -54,7 +54,7 @@ const verificar = () => {
 
         } else if (sexo[1].checked) {
             genero = 'Mulher';
-            if(yearNow == AnoDoNascimento){
+            if(yearNow == yearNas){
                 genero = 'Bebê'
                 //bebê
                 img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
@@ -80,7 +80,7 @@ const verificar = () => {
 
         resuldado.appendChild(img);    //atribui de fato a imagem 
     }
-    */
+    
 }
 const monthF = () => {
     switch (monthNow) {
