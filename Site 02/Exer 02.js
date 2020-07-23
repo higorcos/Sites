@@ -1,29 +1,38 @@
-var date = new Date();  // puxa a data
-var year = date.getFullYear(); //pega o ano do cliente 
-var month = date.getMonth(); //pega o mês do cliente, recebe o mes indicado de 0 a 11
+    var dateNow = new Date();  // puxa a data 
+
+    var dayNow = dateNow.getDay()
+    var monthNow = (dateNow.getMonth()+ 1) //o mês começa em 0
+    var yearNow = dateNow.getFullYear()
+    //pega o mês do cliente, recebe o mes indicado de 0 a 11
+    //pega o ano do cliente 
 
 const verificar = () => {
-    monthF();
-    console.log(date);
+    //monthF();
+    //console.log(date);
 
-    var AnoDoNascimento = window.document.getElementById("iAno");
-    console.log(AnoDoNascimento.value)
-
+    var AnoDoNascimento = (window.document.getElementById("iAno").value); //AAAA-MM-DD Formato da data fornecida pelo usuário
+    
+    const day = AnoDoNascimento.split('-')[2]; // dia
+    const month = AnoDoNascimento.split('-')[1]; //  nesse caso não precisamos fazer nenhum filtro diante do valor do mês
+    const year = AnoDoNascimento.split('-')[0]; // ano
+    console.log(day+ "/" + month + "/" + year) 
+    
+/*
     var resuldado = window.document.querySelector("div#iResultado")  
 
-    if (AnoDoNascimento.value.length == 0 || AnoDoNascimento.value > year || AnoDoNascimento.value == 0) {
+    if (AnoDoNascimento.length == 0 || AnoDoNascimento > yearNow || AnoDoNascimento == 0) {
         window.alert("Verifique os dados e tente novamente! ");
     } else {
         var sexo = window.document.getElementsByName('nSexo');
-        var idade = year - Number(AnoDoNascimento.value);
+        var idade = yearNow - Number(AnoDoNascimento);
         var genero = '';
-        var img = document.createElement('img'); ///criando html pelo javascript
+        var img = document.createElement('img'); //criando html pelo javascript
         img.setAttribute('id', 'img01'); //criamos um id para a foto chamada img1
 
         if (sexo[0].checked) {
             genero = 'Homem';
 
-            if(year == AnoDoNascimento.value){
+            if(yearNow == AnoDoNascimento){
                 genero = 'Bebê'
                 //bebê
                 img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
@@ -45,7 +54,7 @@ const verificar = () => {
 
         } else if (sexo[1].checked) {
             genero = 'Mulher';
-            if(year == AnoDoNascimento.value){
+            if(yearNow == AnoDoNascimento){
                 genero = 'Bebê'
                 //bebê
                 img.setAttribute('src','https://i.ibb.co/HHBQCnr/beb.png')
@@ -71,9 +80,10 @@ const verificar = () => {
 
         resuldado.appendChild(img);    //atribui de fato a imagem 
     }
+    */
 }
 const monthF = () => {
-    switch (month) {
+    switch (monthNow) {
         case 0: 
             console.log("Janeiro");
             break;
@@ -115,4 +125,9 @@ const monthF = () => {
             
     }
 }
+
+
+
+
+
 
