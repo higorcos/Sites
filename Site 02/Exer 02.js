@@ -13,16 +13,13 @@ const verificar = () => {
     const yearNas = AnoDoNascimento.split('-')[0]; // ano
     console.log(day + "/" + month + "/" + yearNas) //mostra a data no formato do Brasil
 
-    var resuldado = window.document.querySelector("div#iResultado")
-
+    
     if (yearNas.length == 0 || yearNas > yearNow || yearNas == 0) {
         window.alert("Verifique os dados e tente novamente! ");
     } else {
         var sexo = window.document.getElementsByName('nSexo');
         var idade = yearNow - yearNas;
-        var diferençaMeses = monthNow - month
-        var meses = '';
-        var anos = '';
+        var diferençaMeses = monthNow - month;
         var genero = '';
         
         var img = document.createElement('img'); //criando html pelo javascript
@@ -31,72 +28,80 @@ const verificar = () => {
         let testeN = Math.sign(diferençaMeses) //Verifica se o número é positivo negativo ou neutro
         if (testeN == -1) {
             diferençaMeses = (monthNow - month) + 12;
-            //console.log(diferençaMeses);
+            console.log(diferençaMeses);
         } else { 
             //console.log(diferençaMeses) 
         }
-
+        
+        var resuldado = window.document.querySelector("div#iResultado");
+        resuldado.style.textAlign = 'center';
         if (sexo[0].checked) {
             genero = 'Homem';
-            if (diferençaMeses <= 12) {
+
+            
+            if (diferençaMeses <= 12 && diferençaMeses != 0) {
                 genero = 'Bebê'
                 //bebê
+                resuldado.innerHTML = ` ${genero} de ${diferençaMeses} meses`
                 img.setAttribute('src', 'https://i.ibb.co/HHBQCnr/beb.png')
-                meses = 'meses'
-
-            }else if(diferençaMeses == 0 && yearNas == yearNow){
-
-            }else if (idade > 0 && idade < 11) {
-                genero = 'Criança'
                 
+            }else if(diferençaMeses == 0 && yearNas != yearNow){//colocar para mostrar idade 
+                genero = 'Criança'               
                 //criança
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
+                img.setAttribute('src', 'https://i.ibb.co/7XPYYzf/Crian-a-h.png');
+            }else if (idade > 0 && idade < 11) {
+                genero = 'Criança'               
+                //criança
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/7XPYYzf/Crian-a-h.png');
             } else if (idade < 22) {
-                genero = 'Jovem'
-                
+                genero = 'Jovem'               
                 //jovem
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/31CFBDc/Jovens-h.png');
-            } else if (idade < 60) {
-                
+            } else if (idade < 60) {               
                 //Adulto
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/0QRZLZx/Adulto-h.png');
             } else {
-                
                 //idoso
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/dLJmvsD/Idoso-h.png');
-            }
-
+            }     
+        
         } else if (sexo[1].checked) {
             genero = 'Mulher';
+
             if (yearNow == yearNas) {
                 genero = 'Bebê'
                 //bebê
-                
+                resuldado.innerHTML = ` ${genero} de ${diferençaMeses} meses`
                 img.setAttribute('src', 'https://i.ibb.co/HHBQCnr/beb.png')
+
+
             } else if (idade > 0 && idade < 11) {
                 genero = 'Criança'
-                
                 //criança
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/0XpK2VT/Crian-a-m.png');
             } else if (idade < 22) {
                 genero = 'Jovem'
-                
                 //jovem
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/z2wPj2R/Jovens-m.png');
             } else if (idade < 60) {
-                
                 //Adulto
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/zf18t4b/Adulto-m.png');
             } else {
-                
                 //idoso
+                resuldado.innerHTML = ` ${genero} de ${idade} anos`
                 img.setAttribute('src', 'https://i.ibb.co/ZmSxxRk/Idoso-m.png');
             }
         }
         resuldado.style.textAlign = 'center';
-        resuldado.innerHTML = ` ${genero} de ${idade} anos e ${diferençaMeses} meses`
         resuldado.innerHTML += `</br>`
-
         resuldado.appendChild(img);    //atribui de fato a imagem 
     }
 
