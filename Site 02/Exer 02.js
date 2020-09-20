@@ -11,7 +11,7 @@ const verificar = () => {
     const day = AnoDoNascimento.split('-')[2];     // dia
     const month = AnoDoNascimento.split('-')[1];   //nesse caso não precisamos fazer nenhum filtro diante do valor do mês
     const yearNas = AnoDoNascimento.split('-')[0]; // ano
-    console.log(day + "/" + month + "/" + yearNas) //mostra a data no formato do Brasil
+    //console.log(day + "/" + month + "/" + yearNas) //mostra a data no formato do Brasil
 
 
     if (yearNas.length == 0 || yearNas > yearNow || yearNas == 0) {
@@ -39,26 +39,34 @@ const verificar = () => {
         convertendo_data_Cliente.setDate(day)
         convertendo_data_Cliente.setMonth(month - 1) // tem que colocar -1 um porque o valor vem direto do cliente e ele não leva em consideração que o Date()começa em 0
         convertendo_data_Cliente.setFullYear(yearNas)
-        console.log(convertendo_data_Cliente,"set");
+        //console.log(convertendo_data_Cliente, "set");
 
         var convertendo_data_ClienteD = convertendo_data_Cliente.getDate()
-        var convertendo_data_ClienteM = (convertendo_data_Cliente.getMonth()+1)
+        var convertendo_data_ClienteM = (convertendo_data_Cliente.getMonth() + 1)
         var convertendo_data_ClienteY = convertendo_data_Cliente.getFullYear()
-    
-       console.log(`${convertendo_data_ClienteD}/${convertendo_data_ClienteM}/${convertendo_data_ClienteY}  get`) //mostra a data no formato do Brasil*/
+
+        console.log(`${convertendo_data_ClienteD}/${convertendo_data_ClienteM}/${convertendo_data_ClienteY}  get`) //mostra a data no formato do Brasil*/
 
 
-        var dateNow2 = new Date();  // puxa a data      
+        var dateNow2 = new Date();  // puxa a data 
+        
+        var month_FOR = (dateNow2.getMonth()+1) //Mês atual
+        var yearNow2 = dateNow2.getFullYear()
+        console.log(`${month_FOR}/${yearNow2}`);
+        
+        var dateNow3 = new Date();  // puxa a data 
+        
+        for (var contador = 0; convertendo_data_ClienteM != month_FOR; contador++) {
+            
+            var monthNow3 = (dateNow3.getMonth()+1)
+            dateNow3.setMonth(dateNow3.getMonth() - 1);
 
-        for (var contador = 0; monthNow2 != month; contador++) {
-
-            var monthNow2 = (dateNow2.getMonth() + 1) //puxa o  mês que começa em 0
-            dateNow2.setMonth(dateNow2.getMonth() - 1)
+            console.log(monthNow3, 'mês 02');
+            console.log(contador, "contador");
+            month_FOR = monthNow3;
+                    //if (month == monthNow3) {
+                        //}
         }
-        //console.log(dateNow2);
-        //console.log(month, "mês do niver")
-        //console.log(monthNow2, "mês atual")
-        console.log(contador);
 
     }
     var resuldado = window.document.querySelector("div#iResultado");
