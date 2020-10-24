@@ -1,4 +1,4 @@
-console.log(moment())
+
 var dateNow = new Date();  // puxa a data 
 var dayNow = dateNow.getDay() // puxa o dia
 var monthNow = (dateNow.getMonth() + 1) //puxa o  mês que começa em 0
@@ -7,6 +7,7 @@ var yearNow = dateNow.getFullYear() //puxa o ano
 const verificar = () => {
     //monthF();
     //console.log(date);
+    console.log(moment()) //usando a biblioteca 
     var AnoDoNascimento = (window.document.getElementById("iAno").value); //AAAA-MM-DD Formato da data fornecida pelo usuário
 
     const day = AnoDoNascimento.split('-')[2];     // dia
@@ -46,7 +47,7 @@ const verificar = () => {
         var convertendo_data_ClienteM = (convertendo_data_Cliente.getMonth() + 1)
         var convertendo_data_ClienteY = convertendo_data_Cliente.getFullYear()
 
-        console.log(`${convertendo_data_ClienteD}/${convertendo_data_ClienteM}/${convertendo_data_ClienteY}  get`) //mostra a data no formato do Brasil*/
+        console.log(`${convertendo_data_ClienteD}/${convertendo_data_ClienteM}/${convertendo_data_ClienteY}  get`) //mostra a data no formato do Brasil
 
 
         var dateNow2 = new Date();  // puxa a data 
