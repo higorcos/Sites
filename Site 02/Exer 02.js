@@ -1,3 +1,4 @@
+console.log(moment())
 var dateNow = new Date();  // puxa a data 
 var dayNow = dateNow.getDay() // puxa o dia
 var monthNow = (dateNow.getMonth() + 1) //puxa o  mês que começa em 0
