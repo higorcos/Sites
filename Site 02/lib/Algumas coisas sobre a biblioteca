@@ -1,0 +1,18 @@
+ var moment1 = moment()
+        var moment2 = moment() 
+        /*__seta o mês e o anos da data do anoversário do cliente*/
+        moment2.months(month) 
+        moment2.years(yearNas)
+        //console.log(moment1.format('DD/MM/YYYY'),"atual ");
+        //console.log(moment2.format('DD/MM/YYYY'),'REsu');
+    
+        var diferençaMeses = moment1.diff(moment2,'month'); //mostra a diferença entre os meses das datas 
+        console.log(diferençaMeses,"meses");  
+        var idade = moment1.diff(moment2,'year'); //mostra a diferençaa entre os anos das datas
+        console.log(idade,"idade");
+//moment().clone() //clonar a data
+/*__só muda a forma de escrever a diferença entre a data escrita e a data atual 
+(não é muito eficiente)
+o uso do diff é melhor      */
+//console.log(moment('2019/10/23').fromNow()); //conta como se a se estivesse no presente 
+//console.log(moment('2019/09/23').toNow()); //conta como se a se estivesse no passado
