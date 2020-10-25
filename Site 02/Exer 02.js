@@ -1,7 +1,6 @@
-
 var dateNow = new Date();  // puxa a data atual 
-var dayNow = dateNow.getDay() // dia
-var monthNow = (dateNow.getMonth() + 1) // mês (valores vão de 0 a 11)
+//var dayNow = dateNow.getDay() // dia
+//var monthNow = (dateNow.getMonth() + 1) // mês (valores vão de 0 a 11)
 var yearNow = dateNow.getFullYear() //ano 
 
 const verificar = () => {
@@ -12,8 +11,6 @@ const verificar = () => {
     var month = (monthNas) - 1
     //console.log(dayNas + "/" + monthNas + "/" + yearNas + " Valor passado pelo usúario") //mostra a data no formato do Brasil
     
-    
-    
     if (yearNas.length == 0 || yearNas > yearNow || yearNas == 0) {
         window.alert("Verifique os dados e tente novamente! ");
     } else {
@@ -22,11 +19,9 @@ const verificar = () => {
        
         var moment1 = moment()
         var moment2 = moment() 
-        var moment3 = moment()
         /*__seta o mês e o anos da data do anoversário do cliente*/
         moment2.months(month) 
         moment2.years(yearNas)
-    
         //console.log(moment1.format('DD/MM/YYYY'),"atual ");
         //console.log(moment2.format('DD/MM/YYYY'),'REsu');
     
@@ -37,44 +32,9 @@ const verificar = () => {
         
         var img = document.createElement('img'); //criando html pelo javascript
         img.setAttribute('id', 'img01'); //criamos um id para a foto chamada img1
-        
-        /*
-        var convertendo_data_Cliente = new Date();
-        convertendo_data_Cliente.setDate(day)
-        convertendo_data_Cliente.setMonth(month - 1) // tem que colocar -1 um porque o valor vem direto do cliente e ele não leva em consideração que o Date()começa em 0
-        convertendo_data_Cliente.setFullYear(yearNas)
-        //console.log(convertendo_data_Cliente, "set");
-        
-        var convertendo_data_ClienteD = convertendo_data_Cliente.getDate()
-        var convertendo_data_ClienteM = (convertendo_data_Cliente.getMonth() + 1)
-        var convertendo_data_ClienteY = convertendo_data_Cliente.getFullYear()
-        
-        console.log(`${convertendo_data_ClienteD}/${convertendo_data_ClienteM}/${convertendo_data_ClienteY}  get`) //mostra a data no formato do Brasil
-        
-        
-        var dateNow2 = new Date();  // puxa a data 
-        
-        var month_FOR = (dateNow2.getMonth()+1) //Mês atual
-        var yearNow2 = dateNow2.getFullYear()
-        console.log(`${month_FOR}/${yearNow2}`);
-        
-        var dateNow3 = new Date();  // puxa a data 
-        
-        for (var contador = 0; convertendo_data_ClienteM != month_FOR; contador++) {
-            
-            var monthNow3 = (dateNow3.getMonth()+1)
-            dateNow3.setMonth(dateNow3.getMonth() - 1);
-            
-            console.log(monthNow3, 'mês 02');
-            console.log(contador, "contador");
-            month_FOR = monthNow3;
-            //if (month == monthNow3) {
-                //}
-            }
-            
-        }*/
         var resuldado = window.document.querySelector("div#iResultado");
         resuldado.style.textAlign = 'center';
+
         if (sexo[0].checked) {
             genero = 'Homem';
         
@@ -150,12 +110,3 @@ const verificar = () => {
     resuldado.appendChild(img);    //atribui de fato a imagem 
 }
 }
-
-
-
-//moment().clone() //clonar a data
-/*__só muda a forma de escrever a diferença entre a data escrita e a data atual 
-(não é muito eficiente)
-o uso do diff é melhor      */
-//console.log(moment('2019/10/23').fromNow()); //conta como se a se estivesse no presente 
-//console.log(moment('2019/09/23').toNow()); //conta como se a se estivesse no passado
