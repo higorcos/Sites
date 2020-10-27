@@ -1,6 +1,15 @@
 var saidaDeMensagem = ""
 var interfaceSite = ""
 var box = ""
+var opcoesMedia = ""
+var interfaceSite = ""
+var numeroDeElementos = ""
+var numero1 = ""
+var numero2 = ""
+var numero3 = ""
+var numero4 = ""
+var numero5 = ""
+/**Função calculadora  */
 const calculadoraNormal = () => {
     console.log('Botão tabuada pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
@@ -12,18 +21,162 @@ const calculadoraNormal = () => {
     <input type="radio" name="nRetornoArit" id="iRetornoC5" onclick="Cal5()"> <label for="iRetornoC5">Operação matemático com 5 números </label></input></br>
     `
 }
-        const Cal2 = () => {
-        
-        interfaceSite.innerHTML = `
+const Cal2 = () => {
+
+    interfaceSite.innerHTML = `
             <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero" /></p>
-            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2" /></p>
+            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
             <p>Operação</p>
             <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
             <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
             <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
             <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
             <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+}
+const Cal3 = () => {
+
+    interfaceSite.innerHTML = `
+            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero"/></p>
+            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
+            <p><label for="iNumero3">Número 3: </label><input type="number" name="nNumero3" id="iNumero3"/></p>
+            <p>Operação</p>
+            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
+            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+}
+const Cal4 = () => {
+
+    interfaceSite.innerHTML = `
+            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero"/></p>
+            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
+            <p><label for="iNumero3">Número 3: </label><input type="number" name="nNumero3" id="iNumero3"/></p>
+            <p><label for="iNumero4">Número 4: </label><input type="number" name="nNumero4" id="iNumero4"/></p>
+            <p>Operação</p>
+            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
+            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+}
+const Cal5 = () => {
+
+    interfaceSite.innerHTML = `
+            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero"/></p>
+            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
+            <p><label for="iNumero3">Número 3: </label><input type="number" name="nNumero3" id="iNumero3"/></p>
+            <p><label for="iNumero4">Número 4: </label><input type="number" name="nNumero4" id="iNumero4"/></p>
+            <p><label for="iNumero5">Número 5: </label><input type="number" name="nNumero5" id="iNumero5"/></p>
+            <p>Operação</p>
+            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
+            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+}
+
+/**Função para fazer a operação  */
+const calcudoraDoisNumeros = () => {
+    let numeroL = document.getElementById('iNumero');
+    let numerol2 = document.getElementById('iNumero2');
+    let numero = Number(document.getElementById('iNumero').value);
+    let numero2 = Number(document.getElementById('iNumero2').value);
+    let nOpe = document.getElementsByName('nOpe')
+
+    boxF();
+
+
+    if (numeroL.value.length == 0) {
+        window.alert('Digite um primeiro número');
+    } else if (numerol2.value.length == 0) {
+        window.alert('Digite um segundo número');
+    } else if (nOpe[0].checked) {//multiplicação
+        //console.log(numero);
+        //console.log(numero2);
+        saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
+        item.value = `valor_${numero * numero2}`
+        saidaDeMensagem.appendChild(item)
+    } else if (nOpe[1].checked) {//divisão
+        //console.log(numero);
+        //console.log(numero2);
+        saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
+        item.value = `valor_${numero / numero2}`
+        saidaDeMensagem.appendChild(item)
+    } else if (nOpe[2].checked) {//soma
+        //console.log(numero);
+        //console.log(numero2);
+        saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
+        item.value = `valor_${numero + numero2}`
+        saidaDeMensagem.appendChild(item)
+    } else if (nOpe[3].checked) {//sulbtração 
+        //console.log(numero);
+        //console.log(numero2);
+        saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
+        item.value = `valor_${numero - numero2}`
+        saidaDeMensagem.appendChild(item)
+
+    }
+}
+ /**Função para o cálculo da tabuada   */
+const cal = () => {
+    let numeroL = document.getElementById('iNumero');
+    let numero = Number(document.getElementById('iNumero').value);
+    let nOpe = document.getElementsByName('nOpe')
+    
+    boxF();
+    
+    if (numeroL.value.length == 0) {
+        window.alert("Digite um número")
+    } else if (nOpe[0].checked) {
+        //console.log(numero);
+        saidaDeMensagem.innerHTML = ``
+        for (var c = 1; c <= 10; c++) {
+            let item = document.createElement('option');
+            item.text = `${numero} x ${c}  = ${numero * c}  `
+            item.value = `valor_${c}`
+            saidaDeMensagem.appendChild(item)
         }
+    } else if (nOpe[1].checked) {
+        //console.log(numero);
+        saidaDeMensagem.innerHTML = ``
+        for (var c = 1; c <= 10; c++) {
+            let item = document.createElement('option');
+            item.text = `${numero} : ${c}  = ${(numero / c).toFixed(2)}  `
+            item.value = `valor_${c}`
+            saidaDeMensagem.appendChild(item)
+        }
+    } else if (nOpe[2].checked) {
+        //console.log(numero);
+        saidaDeMensagem.innerHTML = ``
+        for (var c = 1; c <= 10; c++) {
+            let item = document.createElement('option');
+            item.text = `${numero} + ${c}  = ${numero + c}  `
+            item.value = `valor_${c}`
+            saidaDeMensagem.appendChild(item)
+            
+        }
+    } else if (nOpe[3].checked) {
+        //console.log(numero);
+        saidaDeMensagem.innerHTML = ``
+        for (var c = 1; c <= 10; c++) {
+            let item = document.createElement('option');
+            item.text = `${numero} - ${c}  = ${numero - c}  `
+            item.value = `valor_${c}`
+            saidaDeMensagem.appendChild(item)
+
+        }
+    }
+}
+
 const calculadoraNormal1a10 = () => {
     console.log('Botão calculadora pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
@@ -35,117 +188,9 @@ const calculadoraNormal1a10 = () => {
     <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
     <input type="button" value="Calcular" onclick="cal()" class="botao" />`
 }
-const calcudoraDoisNumeros = () => {
-    let numeroL = document.getElementById('iNumero');
-    let numerol2 = document.getElementById('iNumero2');
-    let numero = Number(document.getElementById('iNumero').value);
-    let numero2 = Number(document.getElementById('iNumero2').value);
-    let nOpe = document.getElementsByName('nOpe')
-
-    boxF();
-    
-
-    if (numeroL.value.length == 0) {
-        window.alert('Digite um número 1');
-    } else if (numerol2.value.length == 0) {
-        window.alert('Digite um número 2');
-    } else if (nOpe[0].checked) {
-        console.log(numero);
-        console.log(numero2);
-        saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
-        item.value = `valor_${numero * numero2}`
-        saidaDeMensagem.appendChild(item)
-    } else if (nOpe[1].checked) {
-        console.log(numero);
-        console.log(numero2);
-        saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
-        item.value = `valor_${numero / numero2}`
-        saidaDeMensagem.appendChild(item)
-} else if (nOpe[2].checked) {
-    console.log(numero);
-    console.log(numero2);
-    saidaDeMensagem.innerHTML = ``
-    let item = document.createElement('option');
-    item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
-    item.value = `valor_${numero + numero2}`
-    saidaDeMensagem.appendChild(item)
-} else if (nOpe[3].checked) {
-    console.log(numero);
-    console.log(numero2);
-    saidaDeMensagem.innerHTML = ``
-    let item = document.createElement('option');
-    item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
-    item.value = `valor_${numero - numero2}`
-    saidaDeMensagem.appendChild(item)
-
-    }
-}
-
-const cal = () => {
-    let numeroL = document.getElementById('iNumero');
-    let numero = Number(document.getElementById('iNumero').value);
-    let nOpe = document.getElementsByName('nOpe')
-
-    boxF();
-
-    if (numeroL.value.length == 0) {
-        window.alert("Digite um número")
-    } else if (nOpe[0].checked) {
-        console.log(numero);
-        saidaDeMensagem.innerHTML = ``
-        for (var c = 1; c <= 10; c++) {
-            let item = document.createElement('option');
-            item.text = `${numero} x ${c}  = ${numero * c}  `
-            item.value = `valor_${c}`
-            saidaDeMensagem.appendChild(item)
-        }
-    } else if (nOpe[1].checked) {
-        console.log(numero);
-        saidaDeMensagem.innerHTML = ``
-        for (var c = 1; c <= 10; c++) {
-            let item = document.createElement('option');
-            item.text = `${numero} : ${c}  = ${(numero / c).toFixed(2)}  `
-            item.value = `valor_${c}`
-            saidaDeMensagem.appendChild(item)
-        }
-    } else if (nOpe[2].checked) {
-        console.log(numero);
-        saidaDeMensagem.innerHTML = ``
-        for (var c = 1; c <= 10; c++) {
-            let item = document.createElement('option');
-            item.text = `${numero} + ${c}  = ${numero + c}  `
-            item.value = `valor_${c}`
-            saidaDeMensagem.appendChild(item)
-
-        }
-    } else if (nOpe[3].checked) {
-        console.log(numero);
-        saidaDeMensagem.innerHTML = ``
-        for (var c = 1; c <= 10; c++) {
-            let item = document.createElement('option');
-            item.text = `${numero} - ${c}  = ${numero - c}  `
-            item.value = `valor_${c}`
-            saidaDeMensagem.appendChild(item)
-
-        }
-    }
-}
-var opcoesMedia = ""
-var interfaceSite = ""
-var numeroDeElementos = ""
-var numero1 = ""
-var numero2 = ""
-var numero3 = ""
-var numero4 = ""
-var numero5 = ""
-
 
 const Media = () => {
-    console.log('Botão Média pressionado  ');
+    //console.log('Botão Média pressionado  ');
     //var interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `
@@ -154,12 +199,12 @@ const Media = () => {
     <input type="radio" name="nRetornoArit" id="iRetornoArit4" onclick="ari4()"> <label for="iRetornoArit4">Fazer média com 4 números </label></input></br>
     <input type="radio" name="nRetornoArit" id="iRetornoArit5" onclick="ari5()"> <label for="iRetornoArit5">Fazer média com 5 números </label></input></br>
     `
-
+    
 
 }
 const ari2 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
-    console.log('Média com 2 números');
+    //console.log('Média com 2 números');
     interfaceSite.innerHTML =
         `
     <label for="iNumero1">Número 1: </label><input type="number" name="nNumero1" id="iNumero1" /></br>
@@ -173,7 +218,7 @@ const ari2 = () => {
 
 const ari3 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
-    console.log('Média com 3 números ');
+    //console.log('Média com 3 números ');
     interfaceSite.innerHTML =
         `
     <label for="iNumero1">Número 1: </label><input type="number" name="nNumero1" id="iNumero1" /></br>
@@ -186,7 +231,7 @@ const ari3 = () => {
 }
 const ari4 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
-    console.log('Média com 4 números ');
+    //console.log('Média com 4 números ');
     interfaceSite.innerHTML =
         `
     <label for="iNumero1">Número 1: </label><input type="number" name="nNumero1" id="iNumero1" /></br>
@@ -199,7 +244,7 @@ const ari4 = () => {
 }
 const ari5 = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
-    console.log('Média com 5 números');
+    //console.log('Média com 5 números');
     interfaceSite.innerHTML =
         `
     <label for="iNumero1">Número 1: </label><input type="number" name="nNumero1" id="iNumero1" /></br>
@@ -220,7 +265,7 @@ const TirandoMedia = () => {
             numero1 = Number(document.getElementById('iNumero1').value);
             numero2 = Number(document.getElementById('iNumero2').value);
             let resultadoMedia2 = (((numero1 + numero2) / 2).toFixed(2));
-            console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} ÷ 2 = ${resultadoMedia2}`);
+            //console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} ÷ 2 = ${resultadoMedia2}`);
             saidaDeMensagem.innerHTML = ``
             opcoesMedia = document.createElement('option');
             opcoesMedia.text = `${numero1} + ${numero2} ÷ 2 = ${resultadoMedia2}`
@@ -232,7 +277,7 @@ const TirandoMedia = () => {
             numero2 = Number(window.document.getElementById('iNumero2').value);
             numero3 = Number(window.document.getElementById('iNumero3').value);
             let resultadoMedia3 = (((numero1 + numero2 + numero3) / 3).toFixed(2));
-            console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} + ${numero3} ÷ 3 = ${resultadoMedia3}`);
+            //console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} + ${numero3} ÷ 3 = ${resultadoMedia3}`);
             saidaDeMensagem.innerHTML = ``
             opcoesMedia = document.createElement('option');
             opcoesMedia.text = `${numero1} + ${numero2} + ${numero3} ÷ 3 = ${resultadoMedia3}`
@@ -245,7 +290,7 @@ const TirandoMedia = () => {
             numero3 = Number(window.document.getElementById('iNumero3').value);
             numero4 = Number(window.document.getElementById('iNumero4').value);
             let resultadoMedia4 = (((numero1 + numero2 + numero3 + numero4) / 4).toFixed(2));
-            console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} + ${numero3} + ${numero4} ÷ 4 = ${resultadoMedia4}`);
+            //console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} + ${numero3} + ${numero4} ÷ 4 = ${resultadoMedia4}`);
             saidaDeMensagem.innerHTML = ``
             opcoesMedia = document.createElement('option');
             opcoesMedia.text = `${numero1} + ${numero2} + ${numero3} + ${numero4} ÷ 4 = ${resultadoMedia4}`
@@ -259,7 +304,7 @@ const TirandoMedia = () => {
             numero4 = Number(window.document.getElementById('iNumero4').value);
             numero5 = Number(window.document.getElementById('iNumero5').value);
             let resultadoMedia5 = (((numero1 + numero2 + numero3 + numero4 + numero5) / 5).toFixed(2));
-            console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} + ${numero3} + ${numero4} + ${numero5} ÷ 5 = ${resultadoMedia5}`);
+            //console.log(`Média entre ${numeroDeElementos} números; ${numero1} + ${numero2} + ${numero3} + ${numero4} + ${numero5} ÷ 5 = ${resultadoMedia5}`);
             saidaDeMensagem.innerHTML = ``
             opcoesMedia = document.createElement('option');
             opcoesMedia.text = `${numero1} + ${numero2} + ${numero3} + ${numero4} + ${numero5} ÷ 5 = ${resultadoMedia5}`
@@ -271,7 +316,7 @@ const TirandoMedia = () => {
             break;
     }
 }
-const boxF = () =>{
+const boxF = () => {
     box = document.getElementById('iBox');
     box.innerHTML = `<select name="nMensagem" id="iSaidaDeMensagem" size="10">
     <option>Digite um número acima</option>
