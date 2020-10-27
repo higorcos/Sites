@@ -5,15 +5,25 @@ const calculadoraNormal = () => {
     console.log('Botão tabuada pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `
-        <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero" /></p>
-        <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2" /></p>
-        <p>Operação</p>
-        <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
-        <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
-        <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
-        <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
-        <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+    <p>Selecione a quantidade de números na operação</p>
+    <input type="radio" name="nRetornoArit" id="iRetornoC2" onclick="Cal2()"> <label for="iRetornoC2">Operação matemático com 2 números</label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoC3" onclick="Cal3()"> <label for="iRetornoC3">Operação matemático com 3 números </label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoC4" onclick="Cal4()"> <label for="iRetornoC4">Operação matemático com 4 números </label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoC5" onclick="Cal5()"> <label for="iRetornoC5">Operação matemático com 5 números </label></input></br>
+    `
 }
+        const Cal2 = () => {
+        
+        interfaceSite.innerHTML = `
+            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero" /></p>
+            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2" /></p>
+            <p>Operação</p>
+            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
+            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
+        }
 const calculadoraNormal1a10 = () => {
     console.log('Botão calculadora pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
@@ -139,10 +149,10 @@ const Media = () => {
     //var interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `
-    <input type="radio" name="nRetornoArit" id="iSaidaDeMensagemtornoArit2" onclick="ari2()"> <label for="iSaidaDeMensagemtornoArit2">Fazer média com 2 números </label></input></br>
-    <input type="radio" name="nRetornoArit" id="iSaidaDeMensagemtornoArit3" onclick="ari3()"> <label for="iSaidaDeMensagemtornoArit3">Fazer média com 3 números </label></input></br>
-    <input type="radio" name="nRetornoArit" id="iSaidaDeMensagemtornoArit4" onclick="ari4()"> <label for="iSaidaDeMensagemtornoArit4">Fazer média com 4 números </label></input></br>
-    <input type="radio" name="nRetornoArit" id="iSaidaDeMensagemtornoArit5" onclick="ari5()"> <label for="iSaidaDeMensagemtornoArit5">Fazer média com 5 números </label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoArit2" onclick="ari2()"> <label for="iRetornoArit2">Fazer média com 2 números </label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoArit3" onclick="ari3()"> <label for="iRetornoArit3">Fazer média com 3 números </label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoArit4" onclick="ari4()"> <label for="iRetornoArit4">Fazer média com 4 números </label></input></br>
+    <input type="radio" name="nRetornoArit" id="iRetornoArit5" onclick="ari5()"> <label for="iRetornoArit5">Fazer média com 5 números </label></input></br>
     `
 
 
