@@ -35,73 +35,79 @@ const calcudoraDoisNumeros = () => {
     //let numero2 = Number(document.getElementById('iNumero2').value);
     //let nOpe = document.getElementsByName('nOpe')
 
-    console.log(typeof(numeroL) )
-    var array_Operação = (numeroL.split(","))//.toString())
-    //var array_Operação = [2,3,4,5] //TESTE
-    console.log(typeof(array_Operação))
+    var array_Operação = (numeroL.split(","))//usa o Split para separar os números
+    console.log(typeof (array_Operação))
     console.log(array_Operação)
+
     let soma = 0
-    for(var posição in array_Operação){
-        soma += parseInt(array_Operação[posição])
+    var numerosArray = []
+    for (var posição in array_Operação) {
+        numerosArray = parseInt(array_Operação[posição])
+
+        if(isNaN(numerosArray) == false) {  //verificar se é um numero mesmo 
+        soma += numerosArray
+        console.log(soma)
+        console.log('é numero')
+        }
     }
-    console.log(soma,'S',typeof(soma))
-    
+    console.log(soma, 'resultado da operação')
+
 
     boxF();
     saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${soma} `
-        item.value = `valor_soma`
-        saidaDeMensagem.appendChild(item)
-   
-/*
-    if (numeroL.value.length == 0) {
-        window.alert('Digite um primeiro número');
-    } else if (numerol2.value.length == 0) {
-        window.alert('Digite um segundo número');
-    } else if (nOpe[0].checked) {//multiplicação
-        //console.log(numero);
-        //console.log(numero2);
-        saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
-        item.value = `valor_${numero * numero2}`
-        saidaDeMensagem.appendChild(item)
-    } else if (nOpe[1].checked) {//divisão
-        //console.log(numero);
-        //console.log(numero2);
-        saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
-        item.value = `valor_${numero / numero2}`
-        saidaDeMensagem.appendChild(item)
-    } else if (nOpe[2].checked) {//soma
-        //console.log(numero);
-        //console.log(numero2);
-        saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
-        item.value = `valor_${numero + numero2}`
-        saidaDeMensagem.appendChild(item)
-    } else if (nOpe[3].checked) {//sulbtração 
-        //console.log(numero);
-        //console.log(numero2);
-        saidaDeMensagem.innerHTML = ``
-        let item = document.createElement('option');
-        item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
-        item.value = `valor_${numero - numero2}`
-        saidaDeMensagem.appendChild(item)
+    let item = document.createElement('option');
+    item.text = `${soma} `
+    item.value = `valor_soma`
+    saidaDeMensagem.appendChild(item)
 
-    }*/
+    /*
+        if (numeroL.value.length == 0) {
+            window.alert('Digite um primeiro número');
+        } else if (numerol2.value.length == 0) {
+            window.alert('Digite um segundo número');
+        } else if (nOpe[0].checked) {//multiplicação
+            //console.log(numero);
+            //console.log(numero2);
+            saidaDeMensagem.innerHTML = ``
+            let item = document.createElement('option');
+            item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
+            item.value = `valor_${numero * numero2}`
+            saidaDeMensagem.appendChild(item)
+        } else if (nOpe[1].checked) {//divisão
+            //console.log(numero);
+            //console.log(numero2);
+            saidaDeMensagem.innerHTML = ``
+            let item = document.createElement('option');
+            item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
+            item.value = `valor_${numero / numero2}`
+            saidaDeMensagem.appendChild(item)
+        } else if (nOpe[2].checked) {//soma
+            //console.log(numero);
+            //console.log(numero2);
+            saidaDeMensagem.innerHTML = ``
+            let item = document.createElement('option');
+            item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
+            item.value = `valor_${numero + numero2}`
+            saidaDeMensagem.appendChild(item)
+        } else if (nOpe[3].checked) {//sulbtração 
+            //console.log(numero);
+            //console.log(numero2);
+            saidaDeMensagem.innerHTML = ``
+            let item = document.createElement('option');
+            item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
+            item.value = `valor_${numero - numero2}`
+            saidaDeMensagem.appendChild(item)
+    
+        }*/
 }
- /**Função para o cálculo da tabuada   */
+/**Função para o cálculo da tabuada   */
 const cal = () => {
     let numeroL = document.getElementById('iNumero');
     let numero = Number(document.getElementById('iNumero').value);
     let nOpe = document.getElementsByName('nOpe')
-    
+
     boxF();
-    
+
     if (numeroL.value.length == 0) {
         window.alert("Digite um número")
     } else if (nOpe[0].checked) {
@@ -130,7 +136,7 @@ const cal = () => {
             item.text = `${numero} + ${c}  = ${numero + c}  `
             item.value = `valor_${c}`
             saidaDeMensagem.appendChild(item)
-            
+
         }
     } else if (nOpe[3].checked) {
         //console.log(numero);
@@ -167,7 +173,7 @@ const Media = () => {
     <input type="radio" name="nRetornoArit" id="iRetornoArit4" onclick="ari4()"> <label for="iRetornoArit4">Fazer média com 4 números </label></input></br>
     <input type="radio" name="nRetornoArit" id="iRetornoArit5" onclick="ari5()"> <label for="iRetornoArit5">Fazer média com 5 números </label></input></br>
     `
-    
+
 
 }
 const ari2 = () => {
