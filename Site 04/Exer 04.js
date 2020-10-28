@@ -14,79 +14,44 @@ const calculadoraNormal = () => {
     console.log('Botão tabuada pressionado');
     interfaceSite = document.getElementById('iInterfaceSite');
     interfaceSite.innerHTML = `
-    <p>Selecione a quantidade de números na operação</p>
-    <input type="radio" name="nRetornoArit" id="iRetornoC2" onclick="Cal2()"> <label for="iRetornoC2">Operação matemático com 2 números</label></input></br>
-    <input type="radio" name="nRetornoArit" id="iRetornoC3" onclick="Cal3()"> <label for="iRetornoC3">Operação matemático com 3 números </label></input></br>
-    <input type="radio" name="nRetornoArit" id="iRetornoC4" onclick="Cal4()"> <label for="iRetornoC4">Operação matemático com 4 números </label></input></br>
-    <input type="radio" name="nRetornoArit" id="iRetornoC5" onclick="Cal5()"> <label for="iRetornoC5">Operação matemático com 5 números </label></input></br>
-    `
+    <p>Adicione os números desejados separando-os com uma vírgula:</p>
+    <p><label for="iNumero">Número 1: </label><input type="text" name="nNumero" id="iNumero" /></p>
+    <p>Operação</p>
+    <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+    <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
+    <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+    <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+    <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
 }
-const Cal2 = () => {
 
-    interfaceSite.innerHTML = `
-            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero" /></p>
-            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
-            <p>Operação</p>
-            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
-            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
-            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
-            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
-            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
-}
-const Cal3 = () => {
 
-    interfaceSite.innerHTML = `
-            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero"/></p>
-            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
-            <p><label for="iNumero3">Número 3: </label><input type="number" name="nNumero3" id="iNumero3"/></p>
-            <p>Operação</p>
-            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
-            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
-            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
-            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
-            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
-}
-const Cal4 = () => {
-
-    interfaceSite.innerHTML = `
-            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero"/></p>
-            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
-            <p><label for="iNumero3">Número 3: </label><input type="number" name="nNumero3" id="iNumero3"/></p>
-            <p><label for="iNumero4">Número 4: </label><input type="number" name="nNumero4" id="iNumero4"/></p>
-            <p>Operação</p>
-            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
-            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
-            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
-            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
-            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
-}
-const Cal5 = () => {
-
-    interfaceSite.innerHTML = `
-            <p><label for="iNumero">Número 1: </label><input type="number" name="nNumero" id="iNumero"/></p>
-            <p><label for="iNumero2">Número 2: </label><input type="number" name="nNumero2" id="iNumero2"/></p>
-            <p><label for="iNumero3">Número 3: </label><input type="number" name="nNumero3" id="iNumero3"/></p>
-            <p><label for="iNumero4">Número 4: </label><input type="number" name="nNumero4" id="iNumero4"/></p>
-            <p><label for="iNumero5">Número 5: </label><input type="number" name="nNumero5" id="iNumero5"/></p>
-            <p>Operação</p>
-            <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
-            <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
-            <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
-            <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
-            <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
-}
 
 /**Função para fazer a operação  */
 const calcudoraDoisNumeros = () => {
-    let numeroL = document.getElementById('iNumero');
-    let numerol2 = document.getElementById('iNumero2');
-    let numero = Number(document.getElementById('iNumero').value);
-    let numero2 = Number(document.getElementById('iNumero2').value);
-    let nOpe = document.getElementsByName('nOpe')
+
+    let numeroL = (document.getElementById('iNumero').value);
+    //let numerol2 = document.getElementById('iNumero2');
+    //let numero = Number(document.getElementById('iNumero').value);
+    //let numero2 = Number(document.getElementById('iNumero2').value);
+    //let nOpe = document.getElementsByName('nOpe')
+
+    var array_Operação = (numeroL.split(",").toString())
+    console.log(numeroL)
+    console.log(array_Operação)
+    let soma = 0
+    for(var posição in array_Operação){
+        soma += array_Operação[posição]
+    }
+    
 
     boxF();
-
-
+    saidaDeMensagem.innerHTML = ``
+        let item = document.createElement('option');
+        item.text = `${soma} `
+        item.value = `valor_soma`
+        saidaDeMensagem.appendChild(item)
+   
+/*
     if (numeroL.value.length == 0) {
         window.alert('Digite um primeiro número');
     } else if (numerol2.value.length == 0) {
@@ -124,7 +89,7 @@ const calcudoraDoisNumeros = () => {
         item.value = `valor_${numero - numero2}`
         saidaDeMensagem.appendChild(item)
 
-    }
+    }*/
 }
  /**Função para o cálculo da tabuada   */
 const cal = () => {
@@ -323,6 +288,7 @@ const boxF = () => {
     </select>`
     saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
 }
+
 
 
 /*
