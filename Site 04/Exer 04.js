@@ -31,17 +31,20 @@ const calcudoraDoisNumeros = () => {
 
     let numeroL = (document.getElementById('iNumero').value);
     //let numerol2 = document.getElementById('iNumero2');
-    //let numero = Number(document.getElementById('iNumero').value);
+    //let numero = Number(document.getElementById('iNumero').value); 
     //let numero2 = Number(document.getElementById('iNumero2').value);
     //let nOpe = document.getElementsByName('nOpe')
 
-    var array_Operação = (numeroL.split(",").toString())
-    console.log(numeroL)
+    console.log(typeof(numeroL) )
+    var array_Operação = (numeroL.split(","))//.toString())
+    //var array_Operação = [2,3,4,5] //TESTE
+    console.log(typeof(array_Operação))
     console.log(array_Operação)
     let soma = 0
     for(var posição in array_Operação){
-        soma += array_Operação[posição]
+        soma += parseInt(array_Operação[posição])
     }
+    console.log(soma,'S',typeof(soma))
     
 
     boxF();
