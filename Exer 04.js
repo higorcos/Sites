@@ -30,81 +30,51 @@ const calculadoraNormal = () => {
 const calcudoraDoisNumeros = () => {
 
     let numeroL = (document.getElementById('iNumero').value);
+
     //let numerol2 = document.getElementById('iNumero2');
     //let numero = Number(document.getElementById('iNumero').value); 
     //let numero2 = Number(document.getElementById('iNumero2').value);
-    //let nOpe = document.getElementsByName('nOpe')
+    let nOpe = document.getElementsByName('nOpe')
 
     var array_Operação = (numeroL.split(","))//usa o Split para separar os números
-    //console.log(typeof (array_Operação))
-    //console.log(array_Operação)
 
-    let soma = 0
-    var numerosArray = []
-    var numeros
+    if (numeroL.length == 0) {
+        window.alert('Digite os números °separados por vígula ');
 
-    for (var posição in array_Operação) {
-        numeros = parseInt(array_Operação[posição])
+    } else if (nOpe[0].checked) {//multiplicação       
 
-        if(isNaN(numeros) == false) {  //verificar se é um numero mesmo 
-        soma += numeros
-        let tamanhoArray = numerosArray.length
-        numerosArray[tamanhoArray] = numeros 
+    } else if (nOpe[1].checked) {//divisão
+
+    } else if (nOpe[2].checked) {//soma
+        var resultadoMtm = 0
+        let numerosArray = []
+        let numeros = 0
+    
+        for (var posição in array_Operação) {
+            numeros = parseInt(array_Operação[posição])
+    
+            if (isNaN(numeros) == false) {  //verificar se é um numero mesmo 
+                resultadoMtm += numeros
+                var tamanhoArray = numerosArray.length
+                numerosArray[tamanhoArray] = numeros
+            }
         }
+        var arrayToString = numerosArray.toString().replace(/,/g, ' + ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
+    } else if (nOpe[3].checked) {//sulbtração 
+
     }
-    //console.log(numerosArray)
-    //console.log(`O resultado da operação é ${soma}`)
-    let arrayToString = numerosArray.toString().replace(/,/g,' + ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
-       
+
+
 
 
 
     boxF();
     saidaDeMensagem.innerHTML = ``
     let item = document.createElement('option');
-    item.text = `O resultado da operação ${arrayToString} é ${soma}.`
-    item.value = `valor_soma`
+    item.text = `O resultado da operação ${arrayToString} é ${resultadoMtm}.`
+    item.value = `valor_${resultadoMtm}`
     saidaDeMensagem.appendChild(item)
 
-    /*
-        if (numeroL.value.length == 0) {
-            window.alert('Digite um primeiro número');
-        } else if (numerol2.value.length == 0) {
-            window.alert('Digite um segundo número');
-        } else if (nOpe[0].checked) {//multiplicação
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
-            item.value = `valor_${numero * numero2}`
-            saidaDeMensagem.appendChild(item)
-        } else if (nOpe[1].checked) {//divisão
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
-            item.value = `valor_${numero / numero2}`
-            saidaDeMensagem.appendChild(item)
-        } else if (nOpe[2].checked) {//soma
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
-            item.value = `valor_${numero + numero2}`
-            saidaDeMensagem.appendChild(item)
-        } else if (nOpe[3].checked) {//sulbtração 
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
-            item.value = `valor_${numero - numero2}`
-            saidaDeMensagem.appendChild(item)
-    
-        }*/
 }
 /**Função para o cálculo da tabuada   */
 const cal = () => {
