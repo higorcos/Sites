@@ -30,75 +30,66 @@ const calculadoraNormal = () => {
 const calcudoraDoisNumeros = () => {
 
     let numeroL = (document.getElementById('iNumero').value);
+
     //let numerol2 = document.getElementById('iNumero2');
     //let numero = Number(document.getElementById('iNumero').value); 
     //let numero2 = Number(document.getElementById('iNumero2').value);
-    //let nOpe = document.getElementsByName('nOpe')
+    let nOpe = document.getElementsByName('nOpe')
 
     var array_Operação = (numeroL.split(","))//usa o Split para separar os números
-    console.log(typeof (array_Operação))
-    console.log(array_Operação)
 
-    let soma = 0
-    var numerosArray = []
-    for (var posição in array_Operação) {
-        numerosArray = parseInt(array_Operação[posição])
+    if (numeroL.length == 0) {
+        window.alert('Digite os números °separados por vígula ');
 
-        if(isNaN(numerosArray) == false) {  //verificar se é um numero mesmo 
-        soma += numerosArray
-        console.log(soma)
-        console.log('é numero')
+    } else if (nOpe[0].checked) {//multiplicação       
+        var resultadoMtm = 0
+        let numerosArray = []
+        let numeros = 0
+    
+        for (var posição in array_Operação) {
+            numeros = parseInt(array_Operação[posição])
+    
+            if (isNaN(numeros) == false) {  //verificar se é um numero mesmo 
+                if (posição == 0){
+                    let numeroIndiceZero = numeros 
+                    resultadoMtm = numeroIndiceZero
+                } else {
+                    resultadoMtm *= numeros
+                }
+                var tamanhoArray = numerosArray.length
+                numerosArray[tamanhoArray] = numeros
+            }
         }
-    }
-    console.log(soma, 'resultado da operação')
+        var arrayToString = numerosArray.toString().replace(/,/g, ' + ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
+  
+    } else if (nOpe[1].checked) {//divisão
 
+    } else if (nOpe[2].checked) {//soma
+        var resultadoMtm = 0
+        let numerosArray = []
+        let numeros = 0
+    
+        for (var posição in array_Operação) {
+            numeros = parseInt(array_Operação[posição])
+    
+            if (isNaN(numeros) == false) {  //verificar se é um numero mesmo 
+                resultadoMtm += numeros
+                var tamanhoArray = numerosArray.length
+                numerosArray[tamanhoArray] = numeros
+            }
+        }
+        var arrayToString = numerosArray.toString().replace(/,/g, ' + ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
+    } else if (nOpe[3].checked) {//sulbtração 
+      
+    }
 
     boxF();
     saidaDeMensagem.innerHTML = ``
     let item = document.createElement('option');
-    item.text = `${soma} `
-    item.value = `valor_soma`
+    item.text = `O resultado da operação ${arrayToString} é ${resultadoMtm}.`
+    item.value = `valor_${resultadoMtm}`
     saidaDeMensagem.appendChild(item)
 
-    /*
-        if (numeroL.value.length == 0) {
-            window.alert('Digite um primeiro número');
-        } else if (numerol2.value.length == 0) {
-            window.alert('Digite um segundo número');
-        } else if (nOpe[0].checked) {//multiplicação
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} x ${numero2}  = ${numero * numero2}  `
-            item.value = `valor_${numero * numero2}`
-            saidaDeMensagem.appendChild(item)
-        } else if (nOpe[1].checked) {//divisão
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} ÷ ${numero2}  = ${numero / numero2}  `
-            item.value = `valor_${numero / numero2}`
-            saidaDeMensagem.appendChild(item)
-        } else if (nOpe[2].checked) {//soma
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} + ${numero2}  = ${numero + numero2}  `
-            item.value = `valor_${numero + numero2}`
-            saidaDeMensagem.appendChild(item)
-        } else if (nOpe[3].checked) {//sulbtração 
-            //console.log(numero);
-            //console.log(numero2);
-            saidaDeMensagem.innerHTML = ``
-            let item = document.createElement('option');
-            item.text = `${numero} - ${numero2}  = ${numero - numero2}  `
-            item.value = `valor_${numero - numero2}`
-            saidaDeMensagem.appendChild(item)
-    
-        }*/
 }
 /**Função para o cálculo da tabuada   */
 const cal = () => {
