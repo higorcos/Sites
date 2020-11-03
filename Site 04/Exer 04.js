@@ -17,10 +17,10 @@ const calculadoraNormal = () => {
     <p>Adicione os números desejados separando-os com uma vírgula:</p>
     <p><label for="iNumero">Número 1: </label><input type="text" name="nNumero" id="iNumero" /></p>
     <p>Operação</p>
-    <p><input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
-    <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label>
-    <input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
-    <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label></p>
+    <p><input type="radio" name="nOpe" id="iSomar"/><label for="iSomar">Somar</label>
+    <input type="radio" name="nOpe" id="iSubtrair"/> <label for="iSubtrair">Subtrair</label>
+    <input type="radio" name="nOpe" id="iMultiplicar"/> <label for="iMultiplicar">Multiplicar</label>
+    <input type="radio" name="nOpe" id="iDividir"/> <label for="iDividir">Dividir</label></p>
     <input type="button" value="Calcular" onclick="calcudoraDoisNumeros()" class="botao" />`
 }
 
@@ -41,7 +41,7 @@ const calcudoraDoisNumeros = () => {
     if (numeroL.length == 0) {
         window.alert('Digite os números °separados por vígula ');
 
-    } else if (nOpe[0].checked) {//multiplicação       
+    } else if (nOpe[2].checked) {//multiplicação       
         var resultadoMtm = 0
         let numerosArray = []
         let numeros = 0
@@ -62,7 +62,7 @@ const calcudoraDoisNumeros = () => {
         }
         var arrayToString = numerosArray.toString().replace(/,/g,' x ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
   
-    } else if (nOpe[1].checked) {//divisão
+    } else if (nOpe[3].checked) {//divisão
         var resultadoMtm = 0
         let numerosArray = []
         let numeros = 0
@@ -83,7 +83,7 @@ const calcudoraDoisNumeros = () => {
         }
         var arrayToString = numerosArray.toString().replace(/,/g,' ÷ ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
   
-    } else if (nOpe[2].checked) {//soma
+    } else if (nOpe[0].checked) {//soma
         var resultadoMtm = 0
         let numerosArray = []
         let numeros = 0
@@ -98,7 +98,7 @@ const calcudoraDoisNumeros = () => {
             }
         }
         var arrayToString = numerosArray.toString().replace(/,/g, ' + ') //Torna o array uma string e depois usa o replace para trocar a virgula pelo simbolo da operação 
-    } else if (nOpe[3].checked) {//sulbtração 
+    } else if (nOpe[1].checked) {//sulbtração 
         var resultadoMtm = 0
         let numerosArray = []
         let numeros = 0
