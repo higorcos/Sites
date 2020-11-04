@@ -243,19 +243,3 @@ const boxF = () => {
     </select>`
     saidaDeMensagem = document.getElementById('iSaidaDeMensagem');
 }
-/*
-let interfaceSite = document.getElementById('iInterfaceSite');
-console.log('media');
-let opcoes = document.createElement('input')
-opcoes.setAttribute('type', 'radio');
-opcoes.name = `nRetornoArit`
-//opcoes.value = `RetornoArit`
-opcoes.id = `iSaidaDeMensagemtornoArit`
- //opcoes.innerHTML = `<label for="iNumero">Número: </label><input type="number" name="nNumero" id="iNumero" /> `
- //opcoes.className = `cRetornoArit`
- var opcoes2 = document.createElement('label')
- opcoes2.setAttribute('for', 'iSaidaDeMensagemtornoArit')
- opcoes2.innerHTML = `Aritimetica 2`
- interfaceSite.appendChild(opcoes);
- opcoes.appendChild(opcoes2);
-*/
