@@ -7,7 +7,7 @@
 
 body {
   /*background-image: url('../img/fundo.jpg');*/
-  background-color: rgba(27, 25, 41, 0.911);
+  background-color: rgb(0, 0, 0);
   background-size: auto 100vh; 
   font-family: 'Source Code Pro', monospace;
   height: 100vh;
@@ -165,6 +165,7 @@ a:hover {
 
 .portfolio figure {
   text-align: center;
+  color: rgb(243, 243, 243);
 }
 
 .img-portfolio {
