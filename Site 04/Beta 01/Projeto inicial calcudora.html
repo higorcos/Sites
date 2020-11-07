@@ -1,0 +1,113 @@
+<!--
+<head>
+  <meta charset="UTF-8" />
+  <title>Usando Eventos Dom</title>
+  <link rel="stylesheet" href="../_CSS/Aplicando.CSS" />
+  <script src="../JavaScript0/aplicando.js"></script>
+</head>
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>cal</title>
+  <style>
+@charset 'UTF-8';
+
+body {
+    background:rgb(50, 104, 139);
+    font: normal 15pt Arial;
+}
+header {
+        color: white;
+        text-align: center;
+}
+section {
+        background: white;
+        border-radius: 10px;
+        padding: 15px ;
+        width: 500px;
+        margin: auto;
+        box-shadow: 3px 3px 10px rgb(53, 50, 50);
+}
+footer {
+    color: white;
+}
+p.cop{
+    
+    text-align: center;
+    font-style: italic;
+
+}
+  </style>
+
+
+</head>
+
+<body>
+  <header><h1>Faça seus cálculos</h1></header>
+  
+  <section>
+  <h2>Somar</h2>
+  <input type="number" name="soma1" id="soma1"> +
+  <input type="number" name="soma2" id="soma2">
+  <input type="button" value="Somar" onclick="somar()">
+  </br>
+  <p>Resultdo</p>
+  <div id="ResultadoS"></div>
+
+  <h2>Subtrair</h2>
+  <input type="number" name="sub1" id="sub1"> -
+  <input type="number" name="sub2" id="sub2">
+  <input type="button" value="Subtrair" onclick="sub()">
+  </br>
+  <p>Resultdo</p>
+  <div id="ResultadoSub"></div>
+
+  <h2>Multiplicar</h2>
+  <input type="number" name="multi1" id="multi1"> x
+  <input type="number" name="multi2" id="multi2">
+  <input type="button" value="Multiplicar" onclick="multiplicar()">
+  </br>
+  <p>Resultdo</p>
+  <div id="ResultadoM"></div>
+  </section>
+  <footer>
+    <p class="cop">&copy; higor </p>
+      <p class="cop">Beta 00.2</p>
+  </footer>
+  <script>
+    function somar() {
+      var Soma1 = window.document.getElementById('soma1')
+      var Soma2 = window.document.getElementById('soma2')
+      var ResultadoS = window.document.getElementById('ResultadoS')
+      var n1 = Number(Soma1.value)
+      var n2 = Number(Soma2.value)
+      var s = n1 + n2
+     ResultadoS.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${s}`
+    }
+
+    function sub() {
+      var Sub1 = window.document.getElementById('sub1')
+      var Sub2 = window.document.getElementById('sub2')
+      var ResultadoSub = window.document.getElementById('ResultadoSub')
+      var n1 = Number(Sub1.value)
+      var n2 = Number(Sub2.value)
+      var s = n1 - n2
+     ResultadoSub.innerHTML = `A subtração entre ${n1} e ${n2} é igual a ${s}`
+    }
+
+    function multiplicar() {
+      var multiplica1 = window.document.getElementById('multi1')
+      var multiplica2 = window.document.getElementById('multi2')
+      var ResultadoM = window.document.getElementById('ResultadoM')
+      var n1 = Number(multiplica1.value)
+      var n2 = Number(multiplica2.value)
+      var s = n1 * n2
+      ResultadoM.innerHTML = `A multiplicação entre ${n1} e ${n2} é igual a ${s}`
+    }
+
+  </script>
+</body>
+</html>
