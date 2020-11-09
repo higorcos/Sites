@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 body {
-    background:rgb(107,187,241);
+    background:rgb(26, 31, 34);
     font: normal 15pt Arial;
 }
 header {
@@ -24,9 +24,9 @@ div {
     padding: 10px;
 }
 
-p#cop{
+p#rodape{
     
-    text-align: right;
+    text-align: center;
     font-style: italic;
 
 }
