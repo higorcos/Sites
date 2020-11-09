@@ -15,7 +15,16 @@
     <h1>Beta 01</h1>
   </header>
   <section>
-    <div id="msg">Mensagem</div>
+    <div>
+      <p class="boxH"><label for="iPotencia">Potência </label><input type="number" name="nPotencia" id="iPotencia"/></p>
+      <p class="boxH"><label for="iHoras">Horas de uso </label><input type="number" name="nHoras" id="iHoras"/></p>
+      <p class="boxH"><label for="iDias">Dias </label><input type="number" name="nDias" id="iDias"/></p>
+      <p class="boxH"><label for="iTarefas">Tarifa </label><input type="number" name="nTarefas" id="iTarefas"/></p>
+    </div>
+    <div><p><input type="button" value="Consumo e custo" onclick="consumo_e_custo()"/></p>
+    </div>
+    
+    <div id="msg"></div>
     <div></div>
   </section>
   <footer>
