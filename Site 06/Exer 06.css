@@ -23,6 +23,10 @@ div {
     text-align: center;
     padding: 10px;
 }
+p.boxH{   
+    padding-right: 3cm;
+    text-align: right;
+}
 
 p#rodape{
     
