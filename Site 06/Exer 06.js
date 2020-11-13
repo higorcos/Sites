@@ -14,7 +14,7 @@ const carregar = () => {
     var usoDias = 0;
     var tarifaEnergia = 0;
     var potenciaEquipamento = 0;
-    
+
     potenciaEquipamento = 40;
     horasDeUso = 6;
     usoDias = 20;
@@ -24,17 +24,18 @@ const carregar = () => {
     horasDeUso = document.getElementById('iHoras').value
     usoDias = document.getElementById('iDias').value
     tarifaEnergia = document.getElementById('iTarifas').value
-console.log(potenciaEquipamento)
-console.log(horasDeUso)
-console.log(usoDias)
-console.log(tarifaEnergia)
+    console.log(potenciaEquipamento)
+    console.log(horasDeUso)
+    console.log(usoDias)
+    console.log(tarifaEnergia)
 
-
-    
 
     var consumo = potenciaEquipamento * horasDeUso * usoDias / 1000
     var preço = consumo * tarifaEnergia
-    msg.innerHTML = `O consumo mensal do aparelho  ${consumo} custo do funcinamento dele ${preço}`
+    msg.innerHTML = `<div class="retornoJS">
+    <p>Consumo mensal: ${consumo}</p> 
+    <p>Custo mensal: ${preço}</p>
+    </div>`
 
 
 
