@@ -12,16 +12,21 @@
 
 <body>
   <header>
-    <h1>Beta 01</h1>
+    <h1>Consumo de Energia</h1>
   </header>
   <section>
     <div>
-      <p class="boxH"><label for="iPotencia">Potência </label><input type="number" name="nPotencia" id="iPotencia"/></p>
-      <p class="boxH"><label for="iHoras">Horas de uso </label><input type="number" name="nHoras" id="iHoras"/></p>
-      <p class="boxH"><label for="iDias">Dias </label><input type="number" name="nDias" id="iDias"/></p>
-      <p class="boxH"><label for="iTarifas">Tarifa </label><input type="number" name="nTarifas" id="iTarifas"/></p>
+      <p class="boxH"><label for="iPotencia">Potência </label><input type="number" name="nPotencia" class="boxH" id="iPotencia"/></p>
+      <p class="boxH"><label for="iHoras">Horas de uso </label><input type="number" name="nHoras" class="boxH" id="iHoras"/></p>
+      <p class="boxH"><label for="iDias">Dias </label><input type="number" name="nDias" class="boxH" id="iDias"/></p>
+      <p class="boxH"><label for="iTarifas">Tarifa</label>
+      <select id="iTarifas">
+      <option value='0,922'>São luis</option>
+      <option></option>
+      <option></option>
+      </select></p>
     </div>
-    <div><p><input type="button" value="Consumo e custo" onclick="carregar()"/></p>
+    <div><p><input type="button" value="Consumo e custo" class="batao" onclick="carregar()"/></p>
     </div>
     
     <div id="msg"></div>
