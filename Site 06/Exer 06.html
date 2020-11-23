@@ -16,20 +16,68 @@
   </header>
   <section>
     <div>
-      <p class="boxH"><label for="iPotencia">Potência </label><input type="number" name="nPotencia" class="boxH" id="iPotencia"/></p>
-      <p class="boxH"><label for="iHoras">Horas de uso </label><input type="number" name="nHoras" class="boxH" id="iHoras"/></p>
-      <p class="boxH"><label for="iDias">Dias </label><input type="number" name="nDias" class="boxH" id="iDias"/></p>
+      <p class="boxH"><label for="iPotencia">Potência </label><input type="number" name="nPotencia" class="boxH"
+          id="iPotencia" /></p>
+      <p class="boxH"><label for="iHoras">Horas de uso </label><input type="number" name="nHoras" class="boxH"
+          id="iHoras" /></p>
+      <p class="boxH"><label for="iDias">Dias </label><input type="number" name="nDias" class="boxH" id="iDias" /></p>
       <p class="boxH"><label for="iTarifas">Tarifa</label>
-      <select id="iTarifas">
-      <option value='0,922'>São luis</option>
-      <option></option>
-      <option></option>
-      </select></p>
+        <select id="iTarifas">
+          <optgroup label="Estados do Norte">
+            <option value='0,655'>Média da região NO</option>
+            <option value="AC">Acre</option>
+            <option value="AM">Amazonas</option>
+            <option value="AP">Amapá</option>
+            <option value="TO">Tocantins</option>
+            <option value="PA">Pará</option>
+            <option value="RR">Roraima</option>
+            <option value="RO">Rondônia</option>
+            </optgrup>
+
+          <optgroup label="Estados do Nordeste">
+            <option value='0,570'>Média da região NE</option>
+            <option value="CE">Ceará</option>
+            <option value="AL">Alagoas</option>
+            <option value="BA">Bahia</option>
+            <option value="MA">Maranhão</option>
+            <option value="PB">Paraíba</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="SE">Sergipe</option>
+
+          </optgroup>
+          <optgroup label="Estados do Centro-Oeste ">
+            <option value='0,579'>Média da região CO</option>
+            <option value="GO">Goiás</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="DF">Distrito Federal</option>
+
+          </optgroup>
+          <optgroup label="Estados do Sudeste ">
+            <option value='0,534'>Média da região SE</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="SP">São Paulo</option>
+
+          </optgroup>
+          <optgroup label="Estados do Sul ">
+            <option value='0.580'>Media da região S</option>
+            <option value="PR">Paraná</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="RS">Rio Grande do Sul</option>
+
+          </optgroup>
+
+
+        </select></p>
     </div>
     <div>
-      <p><input type="button" value="Consumo e custo" class="botao" onclick="carregar()"/></p>
+      <p><input type="button" value="Consumo e custo" class="botao" onclick="carregar()" /></p>
     </div>
-    
+
     <div id="msg"></div>
     <div></div>
   </section>
