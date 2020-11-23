@@ -17,17 +17,22 @@ const carregar = () => {
     horasDeUso = document.getElementById('iHoras').value
     usoDias = document.getElementById('iDias').value
     tarifaEnergia = document.getElementById('iTarifas').value
+    console.log(tarifaEnergia, "tarifa")
+
 
     var consumo = (potenciaEquipamento * horasDeUso * usoDias / 1000).toFixed(2)
-   console.log(consumo)
-    var preço = (consumo * tarifaEnergia).toFixed(2)//verificar se foi colocado tarifa se não for falar para o usuário
-    console.log(preço)
+    console.log(consumo, "consumo")
+ 
+    let preço = 0;
+    preço = (consumo * tarifaEnergia).toFixed(2)
+
+    console.log(preço, "preço")
     msg.innerHTML = `<div class="retornoJS">
     <p>Consumo mensal: ${consumo}</p> 
     <p>Custo mensal: ${preço}</p>
     </div>`
 
 
-
+//verificar se foi colocado tarifa se não for falar para o usuário
 
 }
