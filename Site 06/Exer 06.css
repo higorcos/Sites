@@ -71,4 +71,14 @@ input.botao {
             text-align: center;
             font-style: italic;
         }
-        
+        .place_holder {
+            color: gray;
+        }
+        option {
+            color: #000000;
+           
+        }
+        #iOpcaoOFF {
+           text-align: center;
+            display: none;
+        }
