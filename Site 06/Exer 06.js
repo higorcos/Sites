@@ -1,5 +1,8 @@
 //Ideia do projeto em julho 
 // icone mostrando o consumo de energia do mês
+
+//juntar todas os equipamentos e dá o custo do mês todo (usando o mesmo sistema já usados em outro projeto)
+// lista de equipamento já definidas 
 const carregar = () => {
     var msg = window.document.getElementById('msg');
 
@@ -26,7 +29,7 @@ const carregar = () => {
         console.log(preço, "preço")
         msg.innerHTML = `<div class="retornoJS">
     <p>Consumo mensal: ${consumo}</p> 
-    <p>Custo mensal: ${preço}</p>
+    <p>Custo mensal: R$${preço}</p>
     </div>`
     }
 }
