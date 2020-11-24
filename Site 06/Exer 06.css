@@ -3,12 +3,10 @@ body {
     background: rgb(26, 31, 34);
     font: normal 15pt Arial;
 }
-
 header {
     color: #f5e2ed;
     text-align: center;
 }
-
 section {
     background: rgb(199, 59, 59);
     border-radius: 10px;
@@ -17,21 +15,16 @@ section {
     margin: auto;
     box-shadow: 3px 3px 10px rgb(53, 50, 50);
 }
-
-
 div {
     text-align: right;
     padding: 10px;
 }
-
 p.boxH {
     text-align: right;
     padding-right: 3cm;
 }
-
 input {
     background-color: #f5e2ed;
-
     border-radius: 10px;
     width: 164px;
     height: 25px;
@@ -41,10 +34,9 @@ input {
     color: rgb(7, 7, 7);
     box-shadow: 0px 5px 1px rgb(53, 50, 50);
 }
-
 select {
     background-color:#f5e2ed;
-    text-align: right;
+    text-align: center;
     border-radius: 10px;
     width: 170px;
     height: 27px;
@@ -53,35 +45,31 @@ select {
     color: rgb(7, 7, 7);
     box-shadow: 0px 5px 1px rgb(53, 50, 50);
 }
-.place_holder {
+select {
     color: gray;
-            }
-optgroup{
-    color: #000000;
-    background-color: #d68fb9;
+    transition: color 0s 2147483647s;
 }
- option {
- color: #000000;
- background-color: #f5e2ed;
+select:focus {
+    color: red;
+    transition:0s;
 }
-#iOpcaoOFF {
+select option {
+    color: #333;
+}
+option[value=""][disabled] {
     display: none;
 }
-
 div.retornoJS {
-            text-align: left;
-            padding-left: 3.5cm;
-        }
+  text-align: left;
+  padding-left: 3.5cm;
+ }
 input.botao {
-    background-color: #faafdb; 
-    
-           
-}
-        
+    background-color: #faafdb;           
+}      
 footer {
     color: #f5e2ed;
-    }
+}
 p#rodape {
     text-align: center;
     font-style: italic;
-        }
+}
