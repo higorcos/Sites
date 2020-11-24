@@ -11,6 +11,9 @@ const carregar = () => {
     let horasDeUso = document.getElementById('iHoras').value
     let usoDias = document.getElementById('iDias').value
     let tarifaEnergia = document.getElementById('iTarifas').value
+    if(tarifaEnergia == ""){
+        alert("Selecione o Estado correspondente a sua localização")
+    } else {
     console.log(tarifaEnergia, "tarifa")
 
     let consumo = (potenciaEquipamento * horasDeUso * usoDias / 1000).toFixed(2)
@@ -23,4 +26,5 @@ const carregar = () => {
     <p>Consumo mensal: ${consumo}</p> 
     <p>Custo mensal: ${preço}</p>
     </div>`
+}
 }
