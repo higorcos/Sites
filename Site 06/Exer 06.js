@@ -7,6 +7,13 @@ var potenciaEquipamento = 0;
 var horasDeUso = 0;
 var usoDias = 0;
 var tarifaEnergia = 0;
+var consumo = 0;
+var preço = 0;
+var arrayValorConsumo = []
+var arrayValorPreço = []
+var tamanhoArrayConsumo = 0
+var tamanhoArrayPreço = 0
+
 
 const carregar = () => {
     var msg = window.document.getElementById('msg');
@@ -15,12 +22,12 @@ const carregar = () => {
     horasDeUso = document.getElementById('iHoras').value
     usoDias = document.getElementById('iDias').value
     tarifaEnergia = document.getElementById('iTarifas').value
-/*
-    potenciaEquipamento = 0;
-    horasDeUso = 0;
-    usoDias = 0;
-    tarifaEnergia = 0;
-*/
+    /*
+        potenciaEquipamento = 0;
+        horasDeUso = 0;
+        usoDias = 0;
+        tarifaEnergia = 0;
+    */
     if (potenciaEquipamento.length == 0) {
         alert("Adicione a Potência do equipamento")
         document.getElementById('iPotencia').value = ''; //limpa o campo
@@ -38,17 +45,15 @@ const carregar = () => {
         alert("Selecione o Estado correspondente a sua localização")
     } else {
 
-        let consumo = (potenciaEquipamento * horasDeUso * usoDias / 1000).toFixed(2)
-        let preço = (consumo * tarifaEnergia).toFixed(2)
+        consumo = (potenciaEquipamento * horasDeUso * usoDias / 1000).toFixed(2)
+        preço = (consumo * tarifaEnergia).toFixed(2)
 
-        
-        
-        console.log(tarifaEnergia, "tarifa")
-        console.log(consumo, "consumo")
-        console.log(preço, "preço")
+        //console.log(tarifaEnergia, "tarifa")
+        //console.log(consumo, "consumo")
+        //console.log(preço, "preço")
         msg.innerHTML = `<div class="retornoJS">
         <p>Consumo mensal: ${consumo}</p> 
-        <p>Custo mensal: R$${preço}</p>  
+        <p>Custo mensal: R$ ${preço}</p>  
         </div>
         <h3>Adicione outro equipamento ou finalize</h1>
     <div>
@@ -63,9 +68,20 @@ const carregar = () => {
     `
     }
 
-}/*
+}
+const adicionarEquipamento = () => {
+    tamanhoArrayConsumo = arrayValorConsumo.length
+    tamanhoArrayPreço = arrayValorPreço.length
+
+    arrayValorConsumo[tamanhoArrayConsumo] = consumo
+    arrayValorPreço[tamanhoArrayPreço] = preço
+    console.log(arrayValorConsumo)
+    console.log(arrayValorPreço)
+
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
-    document.getElementById('iPotencia').focus();   // coloca a seta no local    faz a mesma coisa ==== document.getElementById('iPotencia').focus(); 
-*/
+    document.getElementById('iPotencia').focus();   // coloca a seta no local    faz a mesma coisa ==== document.getElementById('iPotencia').focus();
+
+    document.getElementById('msg').remove() //remove um elemento do HTML outros MODOS "msg.innerHTML = ``"   "msg.parentNode.removeChild( msg );"
+}
