@@ -22,12 +22,12 @@ const carregar = () => {
     horasDeUso = document.getElementById('iHoras').value
     usoDias = document.getElementById('iDias').value
     tarifaEnergia = document.getElementById('iTarifas').value
-    /*
-        potenciaEquipamento = 0;
-        horasDeUso = 0;
-        usoDias = 0;
-        tarifaEnergia = 0;
-    */
+
+    potenciaEquipamento = 201;
+    horasDeUso = 18;
+    usoDias = 30;
+    tarifaEnergia = 0.684;
+
     if (potenciaEquipamento.length == 0) {
         alert("Adicione a Potência do equipamento")
         document.getElementById('iPotencia').value = ''; //limpa o campo
@@ -64,8 +64,7 @@ const carregar = () => {
     </div>
     <div>
     <input type="button" value="Finalizar" class="botao" onclick="finalizar()"/>
-    </div>
-    `
+    </div> `
     }
 
 }
@@ -73,15 +72,27 @@ const adicionarEquipamento = () => {
     tamanhoArrayConsumo = arrayValorConsumo.length
     tamanhoArrayPreço = arrayValorPreço.length
 
-    arrayValorConsumo[tamanhoArrayConsumo] = consumo
-    arrayValorPreço[tamanhoArrayPreço] = preço
-    console.log(arrayValorConsumo)
-    console.log(arrayValorPreço)
+    arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
+    arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
+    //console.log(arrayValorConsumo,'consumo')
+    //console.log(arrayValorPreço,'preço')
 
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
     document.getElementById('iPotencia').focus();   // coloca a seta no local    faz a mesma coisa ==== document.getElementById('iPotencia').focus();
 
-    document.getElementById('msg').remove() //remove um elemento do HTML outros MODOS "msg.innerHTML = ``"   "msg.parentNode.removeChild( msg );"
+    //document.getElementById('msg').remove() //remove um elemento do HTML outros MODOS "msg.innerHTML = ``"   "msg.parentNode.removeChild( msg );"
+}
+const finalizar = () => {
+    var resultadoConsumo = 0;
+    for (let posição in arrayValorConsumo) {
+        resultadoConsumo += arrayValorConsumo[posição]
+        console.log(resultadoConsumo,'consumo')
+    }
+    var resultadoPreço = 0;
+    for (let posição in arrayValorPreço){
+        resultadoPreço += arrayValorPreço[posição]
+        console.log(resultadoPreço,'preço')
+    }
 }
