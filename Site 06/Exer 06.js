@@ -72,13 +72,14 @@ const adiciona_array = () => {
     arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
     arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
 
+    
+}
+const adicionarEquipamento = () => {
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
     document.getElementById('iPotencia').focus();   // coloca a seta no local    faz a mesma coisa ==== document.getElementById('iPotencia').focus();
-
-}
-const adicionarEquipamento = () => {
+    
     msg.innerHTML = ``  //remove um elemento do HTML outros MODOS "document.getElementById('msg').remove()"  "msg.parentNode.removeChild( msg );"
 }
 const dublicarEquipamento = () => {
