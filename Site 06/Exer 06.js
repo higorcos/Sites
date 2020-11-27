@@ -66,33 +66,48 @@ const carregar = () => {
     <input type="button" value="Finalizar" class="botao" onclick="finalizar()"/>
     </div> `
     }
-
+    adiciona_array();
 }
 const adicionarEquipamento = () => {
+    msg.innerHTML = ``  //remove um elemento do HTML outros MODOS "document.getElementById('msg').remove()"  "msg.parentNode.removeChild( msg );"
+}
+const finalizar = () => {
+    var resultadoConsumo = 0;
+    for (let posição in arrayValorConsumo) {
+        resultadoConsumo += arrayValorConsumo[posição]
+    }
+    var resultadoPreço = 0;
+    for (let posição in arrayValorPreço) {
+        resultadoPreço += arrayValorPreço[posição]
+    }
+    console.log(resultadoConsumo, 'consumo')
+    console.log(resultadoPreço, 'preço')
+}
+const dublicarEquipamento = () => {
+    tamanhoArrayConsumo = arrayValorConsumo.length
+    tamanhoArrayPreço = arrayValorPreço.length
+
+    let elementoC = arrayValorConsumo[tamanhoArrayConsumo - 1]
+    arrayValorConsumo[tamanhoArrayConsumo] = elementoC
+    let elementoP = arrayValorPreço[tamanhoArrayPreço - 1]
+    arrayValorPreço[tamanhoArrayPreço] = elementoP
+    console.log(arrayValorConsumo, 'consumo')
+    console.log(arrayValorPreço,'preço')
+}
+
+
+
+
+const adiciona_array = () => {
     tamanhoArrayConsumo = arrayValorConsumo.length
     tamanhoArrayPreço = arrayValorPreço.length
 
     arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
     arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
-    //console.log(arrayValorConsumo,'consumo')
-    //console.log(arrayValorPreço,'preço')
 
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
     document.getElementById('iPotencia').focus();   // coloca a seta no local    faz a mesma coisa ==== document.getElementById('iPotencia').focus();
 
-    //document.getElementById('msg').remove() //remove um elemento do HTML outros MODOS "msg.innerHTML = ``"   "msg.parentNode.removeChild( msg );"
-}
-const finalizar = () => {
-    var resultadoConsumo = 0;
-    for (let posição in arrayValorConsumo) {
-        resultadoConsumo += arrayValorConsumo[posição]
-        console.log(resultadoConsumo,'consumo')
-    }
-    var resultadoPreço = 0;
-    for (let posição in arrayValorPreço){
-        resultadoPreço += arrayValorPreço[posição]
-        console.log(resultadoPreço,'preço')
-    }
 }
