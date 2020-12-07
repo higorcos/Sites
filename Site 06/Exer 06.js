@@ -14,7 +14,14 @@ var tamanhoArrayPreço = 0
 
 
 const carregar = () => {
-    Swal.fire("Botão precionado")
+    
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href>Why do I have this issue?</a>'
+      })
+
     var msg = window.document.getElementById('msg');
 
     let potenciaEquipamento = document.getElementById('iPotencia').value
@@ -56,13 +63,13 @@ const carregar = () => {
         </div>
         <h3>Adicione outro equipamento ou finalize</h3>
     <div>
-    <input type="button" value="Adcionar outro" class="botao" onclick="adicionarEquipamento()"/>
+    <p class="botaojs"><input type="button" value="Adcionar outro" class="botao" onclick="adicionarEquipamento()"/></p>
     </div>
     <div>
-    <input type="button" value="Duplicar" class="botao" onclick="dublicarEquipamento()"/>
+    <p class="botaojs"><input type="button" value="Duplicar" class="botao" onclick="dublicarEquipamento()"/></p>
     </div>
     <div>
-    <input type="button" value="Finalizar" class="botao" onclick="finalizar()"/>
+    <p class="botaojs"><input type="button" value="Finalizar" class="botao" onclick="finalizar()"/></p>
     </div> `
     }
     adiciona_array();
