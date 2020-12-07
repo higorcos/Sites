@@ -4,6 +4,7 @@
 //juntar todas os equipamentos e dá o custo do mês todo (usando o mesmo sistema já usados em outro projeto)
 // lista de equipamento já definidas 
 
+//alert('f')
 var consumo = 0;
 var preço = 0;
 var arrayValorConsumo = []
@@ -13,6 +14,7 @@ var tamanhoArrayPreço = 0
 
 
 const carregar = () => {
+    Swal.fire("Botão precionado")
     var msg = window.document.getElementById('msg');
 
     let potenciaEquipamento = document.getElementById('iPotencia').value
