@@ -18,10 +18,10 @@ const carregar = () => {
     Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Something went wrong!',
+        text: 'Something went wrong',
         footer: '<a href>Why do I have this issue?</a>'
-      })
-
+      });
+    
     var msg = window.document.getElementById('msg');
 
     let potenciaEquipamento = document.getElementById('iPotencia').value
@@ -53,6 +53,8 @@ const carregar = () => {
     else if (tarifaEnergia == "") {
         alert("Selecione o Estado correspondente a sua localização")
     } else {
+
+        
 
         consumo = (potenciaEquipamento * horasDeUso * usoDias / 1000).toFixed(2)
         preço = (consumo * tarifaEnergia).toFixed(2)
@@ -119,4 +121,7 @@ const finalizar = () => {
     <div class="retornoJS" style="padding-left: 0cm;">
         <p syl>O seu consumo mensal de energia é ${resultadoConsumo.toFixed(2)}kWh, esse consumo custará ${resultadoPreço.toFixed(2)} R$</p> 
     </div>`
+}
+const pop_up = () => {
+
 }
