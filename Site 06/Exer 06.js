@@ -11,50 +11,45 @@ var arrayValorConsumo = []
 var arrayValorPreço = []
 var tamanhoArrayConsumo = 0
 var tamanhoArrayPreço = 0
-
+var carencia_dados = ""
 
 const carregar = () => {
-    
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong',
-        footer: '<a href>Why do I have this issue?</a>'
-      });
-    
+
     var msg = window.document.getElementById('msg');
 
     let potenciaEquipamento = document.getElementById('iPotencia').value
     let horasDeUso = document.getElementById('iHoras').value
     let usoDias = document.getElementById('iDias').value
     let tarifaEnergia = document.getElementById('iTarifas').value
-/*
-    potenciaEquipamento = 201;
-    horasDeUso = 18;
+
+  potenciaEquipamento = 201;
+   horasDeUso = 18;
     usoDias = 30;
     tarifaEnergia = 0.684;
-*/
+
     if (potenciaEquipamento.length == 0) {
 
-        alert("Adicione a Potência do equipamento")
+        carencia_dados = 'Adicione a Potência do equipamento'
+        pop_up();
         document.getElementById('iPotencia').value = ''; //limpa o campo
         document.getElementById('iPotencia').focus();   // coloca a seta no local 
     } else if (horasDeUso.length == 0) {
 
-        alert("Adicione o total de horas de uso diário do equipamento")
+        carencia_dados = 'Adicione o total de horas de uso diário do equipamento';
+        pop_up();
         document.getElementById('iHoras').value = ''; //limpa o campo
         document.getElementById('iHoras').focus();   // coloca a seta no local 
     } else if (usoDias.length == 0) {
 
-        alert("Adicione o total de dias de uso durante o periodo de um mês")
+        carencia_dados = 'Adicione o total de dias de uso durante o periodo de um mês';
+        pop_up();
         document.getElementById('iDias').value = ''; //limpa o campo
         document.getElementById('iDias').focus();   // coloca a seta no local 
     }
     else if (tarifaEnergia == "") {
-        alert("Selecione o Estado correspondente a sua localização")
+        carencia_dados = 'Selecione o Estado correspondente a sua localização';
+        pop_up();
     } else {
-
-        
 
         consumo = (potenciaEquipamento * horasDeUso * usoDias / 1000).toFixed(2)
         preço = (consumo * tarifaEnergia).toFixed(2)
@@ -74,23 +69,32 @@ const carregar = () => {
     <p class="botaojs"><input type="button" value="Finalizar" class="botao" onclick="finalizar()"/></p>
     </div> `
     }
-    adiciona_array();
 }
 const adiciona_array = () => {
     tamanhoArrayConsumo = arrayValorConsumo.length
     tamanhoArrayPreço = arrayValorPreço.length
-
+    
     arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
     arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
+    
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Consumo e custo adicinado com sucesso ',
+        showConfirmButton: false,
+        timer: 1600
+      })
 
     
 }
 const adicionarEquipamento = () => {
+    adiciona_array();//atenção do local da função 
+    
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
     document.getElementById('iPotencia').focus();   // coloca a seta no local    faz a mesma coisa ==== document.getElementById('iPotencia').focus();
-    
+
     msg.innerHTML = ``  //remove um elemento do HTML outros MODOS "document.getElementById('msg').remove()"  "msg.parentNode.removeChild( msg );"
 }
 const dublicarEquipamento = () => {
@@ -106,6 +110,7 @@ const dublicarEquipamento = () => {
     console.log(arrayValorPreço, 'preço')
 }
 const finalizar = () => {
+    //adicionar uma verificação se tem algo na variavel ou tirar o botão de calcular quando aparecer o resultado 
     var resultadoConsumo = 0;
     for (let posição in arrayValorConsumo) {
         resultadoConsumo += arrayValorConsumo[posição]
@@ -124,4 +129,10 @@ const finalizar = () => {
 }
 const pop_up = () => {
 
+    Swal.fire({
+        icon: 'error',
+        title: 'Dados ',
+        text: `${carencia_dados}`,
+        footer: '<a href>Why do I have this issue?</a>'
+    });
 }
