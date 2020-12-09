@@ -14,7 +14,28 @@ section {
     width: 500px;
     margin: auto;
     box-shadow: 3px 3px 10px rgb(53, 50, 50);
-}
+}/*
+Para colocar classes personalizada ao Sweeralert pode ser adicionada a vários destinos:
+
+Swal.fire({
+  ...
+  customClass: {
+    container: 'container-class',
+    popup: 'popup-class',
+    header: 'header-class',
+    title: 'title-class',
+    closeButton: 'close-button-class',
+    icon: 'icon-class',
+    image: 'image-class',
+    content: 'content-class',
+    input: 'input-class',
+    actions: 'actions-class',
+    confirmButton: 'confirm-button-class',
+    cancelButton: 'cancel-button-class',
+    footer: 'footer-class'
+  }
+})*/
+
 div.swal2-popup {
     background:  rgb(15, 19, 22);
 }
@@ -27,6 +48,7 @@ h2.swal2-title {
 div.swal2-footer {
     border-top: 0px solid #eee;
 }
+/*final das modificações no Sweetalert 2*/
 p.boxH {
     text-align: right;
     padding-right: 3cm;
