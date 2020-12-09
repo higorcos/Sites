@@ -4,7 +4,7 @@
 //juntar todas os equipamentos e dá o custo do mês todo (usando o mesmo sistema já usados em outro projeto)
 // lista de equipamento já definidas 
 //diminuir tamanho do sweet
-//cor do sweet
+
 
 var consumo = 0;
 var preço = 0;
@@ -23,10 +23,10 @@ const carregar = () => {
     let usoDias = document.getElementById('iDias').value
     let tarifaEnergia = document.getElementById('iTarifas').value
 
-    //potenciaEquipamento = 201;
-   //horasDeUso = 18;
-    //usoDias = 30;
-    //tarifaEnergia = 0.684;
+    potenciaEquipamento = 201;
+   horasDeUso = 18;
+    usoDias = 30;
+    tarifaEnergia = 0.684;
 
     if (potenciaEquipamento.length == 0) {
 
@@ -85,6 +85,7 @@ const adicionarEquipamento = () => {
         icon: 'success',
         title: 'Sucesso',
         showConfirmButton: false,
+        width: 280,
         timer: 1000
       })
     document.getElementById('iPotencia').value = ''; //limpa o campo
@@ -129,6 +130,8 @@ const pop_up = () => {
     Swal.fire({
         icon: 'error',
         title: 'Dados ',
+        width: 400,
+        
         confirmButtonColor: '#C73B3B',
         text: `${carencia_dados}`,
     });
