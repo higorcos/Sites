@@ -3,8 +3,9 @@
 
 //juntar todas os equipamentos e dá o custo do mês todo (usando o mesmo sistema já usados em outro projeto)
 // lista de equipamento já definidas 
+//diminuir tamanho do sweet
+//cor do sweet
 
-//alert('f')
 var consumo = 0;
 var preço = 0;
 var arrayValorConsumo = []
@@ -14,7 +15,7 @@ var tamanhoArrayPreço = 0
 var carencia_dados = ""
 
 const carregar = () => {
-
+    
     var msg = window.document.getElementById('msg');
 
     let potenciaEquipamento = document.getElementById('iPotencia').value
@@ -22,10 +23,10 @@ const carregar = () => {
     let usoDias = document.getElementById('iDias').value
     let tarifaEnergia = document.getElementById('iTarifas').value
 
-  potenciaEquipamento = 201;
-   horasDeUso = 18;
-    usoDias = 30;
-    tarifaEnergia = 0.684;
+    //potenciaEquipamento = 201;
+   //horasDeUso = 18;
+    //usoDias = 30;
+    //tarifaEnergia = 0.684;
 
     if (potenciaEquipamento.length == 0) {
 
@@ -76,20 +77,19 @@ const adiciona_array = () => {
     
     arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
     arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
-    
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Consumo e custo adicinado com sucesso ',
-        showConfirmButton: false,
-        timer: 1600
-      })
+
 
     
 }
 const adicionarEquipamento = () => {
     adiciona_array();//atenção do local da função 
-    
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Sucesso',
+        showConfirmButton: false,
+        timer: 1000
+      })
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
@@ -132,6 +132,7 @@ const pop_up = () => {
     Swal.fire({
         icon: 'error',
         title: 'Dados ',
+        confirmButtonColor: '#C73B3B',
         text: `${carencia_dados}`,
         footer: '<a href>Why do I have this issue?</a>'
     });
