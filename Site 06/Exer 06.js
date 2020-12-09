@@ -76,10 +76,7 @@ const adiciona_array = () => {
     tamanhoArrayPreço = arrayValorPreço.length
     
     arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
-    arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
-
-
-    
+    arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)  
 }
 const adicionarEquipamento = () => {
     adiciona_array();//atenção do local da função 
@@ -134,6 +131,5 @@ const pop_up = () => {
         title: 'Dados ',
         confirmButtonColor: '#C73B3B',
         text: `${carencia_dados}`,
-        footer: '<a href>Why do I have this issue?</a>'
     });
 }
