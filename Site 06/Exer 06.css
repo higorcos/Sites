@@ -15,6 +15,9 @@ section {
     margin: auto;
     box-shadow: 3px 3px 10px rgb(53, 50, 50);
 }
+div.swal2-popup {
+    background:  rgb(15, 19, 22);
+}
 p.boxH {
     text-align: right;
     padding-right: 3cm;
