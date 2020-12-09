@@ -18,6 +18,15 @@ section {
 div.swal2-popup {
     background:  rgb(15, 19, 22);
 }
+div.swal2-content{
+    color: rgb(241, 246, 250);
+}
+h2.swal2-title {
+    color: rgb(241, 246, 250);
+}
+div.swal2-footer {
+    border-top: 0px solid #eee;
+}
 p.boxH {
     text-align: right;
     padding-right: 3cm;
