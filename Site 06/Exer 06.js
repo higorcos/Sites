@@ -23,10 +23,10 @@ const carregar = () => {
     let usoDias = document.getElementById('iDias').value
     let tarifaEnergia = document.getElementById('iTarifas').value
 
-    potenciaEquipamento = 201;
-   horasDeUso = 18;
-    usoDias = 30;
-    tarifaEnergia = 0.684;
+   // potenciaEquipamento = 201;
+   //horasDeUso = 18;
+    //usoDias = 30;
+    //tarifaEnergia = 0.684;
 
     if (potenciaEquipamento.length == 0) {
 
