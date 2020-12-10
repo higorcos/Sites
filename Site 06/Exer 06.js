@@ -1,7 +1,6 @@
 //Ideia do projeto em julho 
 // icone mostrando o consumo de energia do mês
 
-//juntar todas os equipamentos e dá o custo do mês todo (usando o mesmo sistema já usados em outro projeto)
 // lista de equipamento já definidas 
 //diminuir tamanho do sweet
 
@@ -15,7 +14,7 @@ var tamanhoArrayPreço = 0
 var carencia_dados = ""
 
 const carregar = () => {
-    
+
     var msg = window.document.getElementById('msg');
 
     let potenciaEquipamento = document.getElementById('iPotencia').value
@@ -23,10 +22,10 @@ const carregar = () => {
     let usoDias = document.getElementById('iDias').value
     let tarifaEnergia = document.getElementById('iTarifas').value
 
-   // potenciaEquipamento = 201;
-   //horasDeUso = 18;
-    //usoDias = 30;
-    //tarifaEnergia = 0.684;
+    potenciaEquipamento = 201;
+    horasDeUso = 18;
+    usoDias = 30;
+    tarifaEnergia = 0.684;
 
     if (potenciaEquipamento.length == 0) {
 
@@ -74,20 +73,20 @@ const carregar = () => {
 const adiciona_array = () => {
     tamanhoArrayConsumo = arrayValorConsumo.length
     tamanhoArrayPreço = arrayValorPreço.length
-    
+
     arrayValorConsumo[tamanhoArrayConsumo] = parseFloat(consumo)
-    arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)  
+    arrayValorPreço[tamanhoArrayPreço] = parseFloat(preço)
 }
 const adicionarEquipamento = () => {
     adiciona_array();//atenção do local da função 
     Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Sucesso',
+        title: 'Adicionado',
+        customClass: 'SweetSucesso',
         showConfirmButton: false,
-        width: 280,
         timer: 1000
-      })
+    })
     document.getElementById('iPotencia').value = ''; //limpa o campo
     document.getElementById('iHoras').value = ''; //limpa o campo
     document.getElementById('iDias').value = ''; //limpa o campo
@@ -131,8 +130,33 @@ const pop_up = () => {
         icon: 'error',
         title: 'Dados ',
         width: 400,
-        
+
         confirmButtonColor: '#C73B3B',
         text: `${carencia_dados}`,
     });
 }
+/*
+Para colocar classes personalizada ao Sweeralert pode ser adicionada 
+a vários destinos:
+
+Swal.fire({
+  ...
+  customClass: {
+    container: 'container-class',
+    popup: 'popup-class',
+    header: 'header-class',
+    title: 'title-class',
+    closeButton: 'close-button-class',
+    icon: 'icon-class',
+    image: 'image-class',
+    content: 'content-class',
+    input: 'input-class',
+    actions: 'actions-class',
+    confirmButton: 'confirm-button-class',
+    cancelButton: 'cancel-button-class',
+    footer: 'footer-class'
+    
+  }
+  ou 
+  customClass: "nome da sua preferencia "
+})*/
